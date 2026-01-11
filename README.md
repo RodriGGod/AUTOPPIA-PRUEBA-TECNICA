@@ -30,15 +30,26 @@ OPENAI_API_KEY=tu_clave_api_aqui
 
 Navegue a los directorios del proyecto e instale las dependencias necesarias.
 
-Para el proyecto Node.js (`autoppia_iwa`):
+#### Para los proyectos Web (Frontends)
+Cada demo web (ubicada en `autoppia_webs_demo/web_*`) es un proyecto independiente que requiere Node.js.
 
+Ejemplo para `web_1_autocinema`:
 ```bash
-cd autoppia_iwa
+cd autoppia_webs_demo/web_1_autocinema
 npm install
+# Repetir para otras webs si es necesario (web_2_autobooks, etc.)
 ```
 
-Para el servidor Python (si aplica):
+#### Para el Core y Servidores (Python)
+Tanto `autoppia_iwa` como el `webs_server` son proyectos en Python.
 
+Para `autoppia_iwa`:
+```bash
+cd autoppia_iwa
+pip install -r requirements.txt
+```
+
+Para `webs_server`:
 ```bash
 cd autoppia_webs_demo/webs_server
 pip install -r requirements.txt
