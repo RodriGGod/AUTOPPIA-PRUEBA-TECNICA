@@ -1,0 +1,482 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom email client styling */
+@layer components {
+  .email-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) transparent;
+  }
+
+  .email-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .email-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .email-scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground));
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+  }
+
+  .email-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--primary));
+  }
+
+  /* Email item styling */
+  .email-item-unread {
+    @apply bg-gradient-to-r from-primary/5 to-transparent border-l-2 border-primary/30;
+  }
+
+  .email-item-selected {
+    @apply bg-primary/10 border-primary/40;
+  }
+
+  .email-item-hover {
+    @apply hover:bg-muted/60 hover:shadow-sm transition-all duration-200;
+  }
+
+  /* Sidebar styling */
+  .sidebar-gradient {
+    @apply bg-gradient-to-b from-background via-muted/20 to-background;
+  }
+
+  .sidebar-item-active {
+    @apply bg-primary/15 border-r-2 border-primary text-primary font-medium;
+  }
+
+  .sidebar-item-hover {
+    @apply hover:bg-muted/60 hover:translate-x-1 transition-all duration-200;
+  }
+
+  /* Toolbar styling */
+  .toolbar-glass {
+    @apply bg-background/80 backdrop-blur-md border-b border-border/50;
+  }
+
+  /* Button styling */
+  .btn-primary-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-200;
+  }
+
+  .btn-secondary-outline {
+    @apply border-2 border-primary/30 hover:border-primary hover:bg-primary/5 transition-all duration-200;
+  }
+
+  /* Compose modal styling */
+  .compose-modal {
+    @apply shadow-2xl border border-border/50 backdrop-blur-sm;
+  }
+
+  /* Card styling */
+  .email-card {
+    @apply bg-card border border-border/60 rounded-xl shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
+  /* Focus styles */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  /* Badge styling */
+  .badge-primary {
+    @apply bg-primary/15 text-primary border border-primary/30;
+  }
+
+  .badge-secondary {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.4s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.5s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dynamic Layout Classes */
+  
+  /* Header Layout Variations */
+  .search-left {
+    @apply justify-start;
+  }
+  
+  .search-center {
+    @apply justify-center;
+  }
+  
+  .search-right {
+    @apply justify-end;
+  }
+  
+  .search-full-width {
+    @apply w-full;
+  }
+  
+  .navbar-side {
+    @apply flex-col items-start h-24; /* Two-line header height */
+  }
+  
+  .navbar-hidden-top {
+    @apply hidden md:flex;
+  }
+  
+  .navbar-floating {
+    @apply absolute top-4 right-4 bg-white shadow-xl rounded-lg p-3 border border-gray-200 z-50 max-w-sm;
+  }
+  
+  /* Content Layout Variations */
+  .content-reverse {
+    @apply flex-col-reverse;
+  }
+  
+  .content-centered {
+    @apply justify-center items-center min-h-screen;
+  }
+  
+  .content-wide {
+    @apply max-w-none mx-0 px-2;
+  }
+  
+  .content-narrow {
+    @apply max-w-4xl mx-auto px-4;
+  }
+  
+  .content-default {
+    @apply max-w-7xl mx-auto px-4;
+  }
+  
+  /* Card Layout Variations */
+  .cards-row {
+    @apply grid grid-cols-1 gap-4;
+  }
+  
+  .cards-column {
+    @apply grid grid-cols-1 gap-6;
+  }
+  
+  .cards-masonry {
+    @apply columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6;
+  }
+  
+  .cards-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+  }
+  
+  /* Button Style Variations */
+  .buttons-rounded {
+    @apply rounded-full;
+  }
+  
+  .buttons-outlined {
+    @apply border-2 border-current bg-transparent;
+  }
+  
+  .buttons-minimal {
+    @apply bg-transparent border-none shadow-none;
+  }
+  
+  /* Footer Style Variations */
+  .footer-minimal {
+    @apply py-4;
+  }
+  
+  .footer-expanded {
+    @apply py-16;
+  }
+  
+  .footer-centered {
+    @apply text-center;
+  }
+  
+  /* Spacing Variations */
+  .spacing-tight {
+    @apply gap-2 p-2;
+  }
+  
+  .spacing-loose {
+    @apply gap-8 p-8;
+  }
+  
+  .spacing-normal {
+    @apply gap-4 p-4;
+  }
+
+  /* Email-specific Layout Classes */
+  
+  /* Email Layout Variations */
+  .email-list {
+    @apply flex flex-col space-y-2;
+  }
+  
+  .email-card {
+    @apply bg-card border border-border/60 rounded-xl shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  .email-compact {
+    @apply space-y-1;
+  }
+  
+  .email-preview {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-4;
+  }
+  
+  .email-split {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-6;
+  }
+  
+  /* Sidebar Position Variations */
+  .sidebar-left {
+    @apply border-r border-border;
+  }
+  
+  .sidebar-right {
+    @apply border-l border-border;
+  }
+  
+  .sidebar-top {
+    @apply border-b border-border;
+  }
+  
+  .sidebar-bottom {
+    @apply border-t border-border;
+  }
+  
+  .sidebar-hidden {
+    @apply hidden;
+  }
+  
+  /* Email Density Variations */
+  .density-compact {
+    @apply space-y-1 text-sm;
+  }
+  
+  .density-comfortable {
+    @apply space-y-3 text-base;
+  }
+  
+  .density-cozy {
+    @apply space-y-4 text-lg;
+  }
+  
+  /* Email Preview Variations */
+  .preview-inline {
+    @apply block;
+  }
+  
+  .preview-popup {
+    @apply fixed inset-0 z-50 bg-black/50 flex items-center justify-center;
+  }
+  
+  .preview-sidebar {
+    @apply border-l border-border;
+  }
+  
+  .preview-fullscreen {
+    @apply fixed inset-0 z-50 bg-background;
+  }
+  
+  /* Attachment Display Variations */
+  .attachments-list {
+    @apply flex flex-col space-y-2;
+  }
+  
+  .attachments-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-2;
+  }
+  
+  .attachments-preview {
+    @apply flex space-x-2;
+  }
+  
+  .attachments-hidden {
+    @apply hidden;
+  }
+  
+  /* Label Display Variations */
+  .labels-inline {
+    @apply inline-flex items-center space-x-1;
+  }
+  
+  .labels-badges {
+    @apply flex flex-wrap gap-1;
+  }
+  
+  .labels-chips {
+    @apply flex flex-wrap gap-1;
+  }
+  
+  .labels-hidden {
+    @apply hidden;
+  }
+
+  /* Dynamic body padding based on navbar style */
+  body.navbar-side {
+    @apply pt-24; /* Two-line header height: main nav (~64px) + secondary nav (~32px) */
+  }
+  
+  body.navbar-hidden-top {
+    @apply pt-20; /* Standard header height since nav is hidden but header still exists */
+  }
+  
+  body.navbar-floating {
+    @apply pt-20; /* Standard header height to account for floating navbar space */
+  }
+  
+  body.navbar-top {
+    @apply pt-24; /* Two-line header height: main nav (~64px) + secondary nav (~32px) */
+  }
+
+/* Prose styling for email content */
+.prose {
+  @apply text-foreground;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply text-foreground;
+}
+
+.prose a {
+  @apply text-primary hover:text-primary/80;
+}
+
+.prose blockquote {
+  @apply border-l-primary/50 text-muted-foreground bg-muted/30 rounded-r-lg;
+}
+
+.prose code {
+  @apply bg-muted text-foreground px-2 py-1 rounded-md;
+}
+
+.prose pre {
+  @apply bg-muted border border-border rounded-lg;
+}
+
+.prose hr {
+  @apply border-border;
+}

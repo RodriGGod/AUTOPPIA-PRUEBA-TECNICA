@@ -1,0 +1,74 @@
+services:
+  app:
+    user: "0:0"
+    build: .
+    ports:
+      - "127.0.0.1:${WEB_PORT}:8090"
+    env_file:
+      - .env
+    environment:
+      # ======== Core Settings ========
+      LOG_LEVEL: info
+      # ======== Server Settings ========
+      HOST: 0.0.0.0
+      PORT: 8090
+
+      # ======== Database ========
+      POSTGRES_USER: webs_user
+      POSTGRES_PASSWORD: autoppia_2025
+      POSTGRES_DB: autoppia_db
+      DB_HOST: db
+      DB_PORT: 5432
+      DATABASE_URL: "postgresql://webs_user:autoppia_2025@db:5432/autoppia_db"
+      DB_POOL_MIN: 10
+      DB_POOL_MAX: 50
+      ENABLE_DYNAMIC_V2_DB_MODE: ${ENABLE_DYNAMIC_V2_DB_MODE:-false}
+
+      # Minimum response size (in bytes) before applying GZIP compression
+      GZIP_MIN_SIZE: 1000
+
+      # Additional data-gen settings come from .env via env_file
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - apps_net
+    volumes:
+      # Use WEBS_DATA_PATH env var (set by setup.sh, works on any server)
+      - ${WEBS_DATA_PATH}:/app/data
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: webs_user
+      POSTGRES_PASSWORD: autoppia_2025
+      POSTGRES_DB: autoppia_db
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT}:5432"
+    volumes:
+      - webs_postgres_data:/var/lib/postgresql/data
+      - ./postgres/initdb.d:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U webs_user -d autoppia_db -p 5432"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    command: >
+      postgres
+        -c max_connections=200
+        -c shared_buffers=512MB
+        -c work_mem=32MB
+        -c effective_cache_size=1536MB
+        -c maintenance_work_mem=128MB
+        -c random_page_cost=1.1
+        -c checkpoint_completion_target=0.9
+    networks:
+      - apps_net
+
+volumes:
+  webs_postgres_data:
+  webs_data:
+
+networks:
+  apps_net:
+    external: true

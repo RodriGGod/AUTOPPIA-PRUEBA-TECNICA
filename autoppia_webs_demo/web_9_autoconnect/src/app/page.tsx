@@ -1,0 +1,405 @@
+"use client";
+import { useEffect, useMemo, useState } from "react";
+import {
+  type Post as PostType,
+  type User as UserType,
+} from "@/library/dataset";
+import Avatar from "@/components/Avatar";
+import Post from "@/components/Post";
+import LeftSidebar from "@/components/LeftSidebar";
+import RightSidebar from "@/components/RightSidebar";
+import { EVENT_TYPES, logEvent } from "@/library/events";
+import { useSeed } from "@/context/SeedContext";
+import {
+  getEffectiveLayoutConfig,
+  getLayoutClasses,
+  getShuffledItems,
+} from "@/dynamic/v1-layouts";
+import { useV3Attributes } from "@/dynamic/v3-dynamic";
+import { dynamicDataProvider } from "@/dynamic/v2-data";
+import { DataReadyGate } from "@/components/DataReadyGate";
+import {
+  loadHiddenPostIds,
+  loadHiddenPosts,
+  loadSavedPosts,
+  persistHiddenPostIds,
+  persistHiddenPosts,
+  persistSavedPosts,
+} from "@/library/localState";
+import Link from "next/link";
+
+function HomeContent() {
+  const { seed, resolvedSeeds } = useSeed();
+  const layoutSeed = resolvedSeeds.v1 ?? resolvedSeeds.base ?? seed;
+  const layout = getEffectiveLayoutConfig(layoutSeed);
+  const { getText, getClass } = useV3Attributes();
+
+  // Get data from dynamic provider
+  const users = dynamicDataProvider.getUsers();
+  const defaultPosts = dynamicDataProvider.getPosts();
+
+  // pick a current user
+  const currentUser = users[2] || users[0];
+  const [posts, setPosts] = useState<PostType[]>(
+    () => defaultPosts.map((post) => ({ ...post, liked: false })) // ensure fresh local likes
+  );
+  const [savedPosts, setSavedPosts] = useState<PostType[]>([]);
+  const [hiddenPostIds, setHiddenPostIds] = useState<Set<string>>(new Set());
+  const [hiddenPosts, setHiddenPosts] = useState<PostType[]>([]);
+  const [newPost, setNewPost] = useState("");
+
+  useEffect(() => {
+    setSavedPosts(loadSavedPosts());
+    setHiddenPostIds(loadHiddenPostIds());
+    setHiddenPosts(loadHiddenPosts());
+  }, []);
+
+  useEffect(() => {
+    persistSavedPosts(savedPosts);
+  }, [savedPosts]);
+
+  useEffect(() => {
+    persistHiddenPostIds(hiddenPostIds);
+    persistHiddenPosts(hiddenPosts);
+  }, [hiddenPostIds, hiddenPosts]);
+
+  function handleSubmitPost(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newPost.trim()) return;
+
+    const newPostData: PostType = {
+      id: Math.random().toString(36).slice(2),
+      user: currentUser,
+      content: newPost,
+      timestamp: new Date().toISOString(),
+      likes: 0,
+      liked: false,
+      comments: [],
+    };
+
+    setPosts([newPostData, ...posts]);
+    setNewPost("");
+
+    logEvent(EVENT_TYPES.POST_STATUS, {
+      userName: currentUser.name,
+      content: newPostData.content,
+      postId: newPostData.id,
+    });
+  }
+
+  function handleLike(postId: string) {
+    setPosts((ps) =>
+      ps.map((p) => {
+        if (p.id === postId) {
+          const liked = !p.liked;
+          const updatedPost = {
+            ...p,
+            liked,
+            likes: liked ? p.likes + 1 : p.likes - 1,
+          };
+
+          logEvent(EVENT_TYPES.LIKE_POST, {
+            postId,
+            userName: currentUser.name,
+            action: liked ? "liked" : "unliked",
+            posterContent: p.content,
+            posterName: p.user.name,
+          });
+
+          return updatedPost;
+        }
+        return p;
+      })
+    );
+  }
+
+  function handleAddComment(postId: string, text: string) {
+    const comment = {
+      id: Math.random().toString(36).slice(2),
+      user: currentUser,
+      text,
+      timestamp: new Date().toISOString(),
+    };
+
+  const post = posts.find((p) => p.id === postId);
+
+  setPosts((ps) =>
+    ps.map((p) =>
+      p.id === postId
+        ? {
+            ...p,
+            comments: [...p.comments, comment],
+          }
+        : p
+      )
+    );
+
+    logEvent(EVENT_TYPES.COMMENT_ON_POST, {
+      postId,
+      commentId: comment.id,
+      userName: currentUser.name,
+      commentText: text,
+      posterName: post?.user.name,
+      posterContent: post?.content,
+    });
+  }
+
+  const shuffledPosts = useMemo(
+    () => getShuffledItems(posts, layoutSeed),
+    [posts, layoutSeed]
+  );
+  const visiblePosts = useMemo(
+    () => shuffledPosts.filter((p) => !hiddenPostIds.has(p.id)),
+    [shuffledPosts, hiddenPostIds]
+  );
+  const renderPostsBlock = () => (
+    <>
+      {savedPosts.length > 0 && (
+        <div className="mb-4 bg-white rounded-lg shadow p-4">
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="font-semibold text-sm text-gray-700">
+              Saved posts ({savedPosts.length})
+            </h2>
+            <button
+              className="text-xs text-blue-600 hover:underline"
+              onClick={() => setSavedPosts([])}
+            >
+              Clear
+            </button>
+          </div>
+          <div className="flex items-center gap-3 text-xs text-blue-700 mb-2">
+            <Link href="/saved" className="hover:underline font-semibold">
+              View all saved
+            </Link>
+            <span className="text-gray-300">•</span>
+            <span className="text-gray-600">
+              Saved posts persist locally for this session.
+            </span>
+          </div>
+          <ul className="space-y-2 text-sm text-gray-700">
+            {savedPosts.map((p) => (
+              <li key={`saved-${p.id}`} className="flex items-start gap-2">
+                <span className="text-gray-400">•</span>
+                <div>
+                  <div className="font-semibold">{p.user.name}</div>
+                  <div className="text-gray-600 line-clamp-2">{p.content}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+          <div className="space-y-4">
+            {visiblePosts.map((post) => (
+              <Post
+                key={post.id}
+                post={post}
+                onLike={handleLike}
+                onAddComment={handleAddComment}
+                onSave={(p) =>
+                  setSavedPosts((prev) => {
+                    const deduped = prev.filter((x) => x.id !== p.id);
+                    return [p, ...deduped];
+                  })
+                }
+                onHide={(postId) =>
+                  setHiddenPostIds((prev) => {
+                    const next = new Set(prev);
+                    next.add(postId);
+                    const found = posts.find((p) => p.id === postId);
+                    if (found) {
+                      setHiddenPosts((hp) => {
+                        const filtered = hp.filter((p) => p.id !== postId);
+                        return [found, ...filtered];
+                      });
+                    }
+                    return next;
+                  })
+                }
+              />
+            ))}
+          </div>
+        </>
+  );
+  const sidebarClasses = getLayoutClasses(layout, 'sidebarPosition');
+  const postBoxClasses = getLayoutClasses(layout, 'postBoxPosition');
+
+  const renderSidebar = (position: 'left' | 'right' | 'top' | 'bottom') => {
+    if (position === 'left') {
+      return (
+        <aside className="w-[300px] flex-shrink-0 hidden lg:block">
+          <LeftSidebar />
+        </aside>
+      );
+    }
+    if (position === 'right') {
+      return (
+        <aside className="w-[300px] flex-shrink-0 hidden lg:block">
+          <RightSidebar />
+        </aside>
+      );
+    }
+    return null;
+  };
+
+  const renderPostBox = () => {
+    if (layout.postBoxPosition === 'left' || layout.postBoxPosition === 'right') {
+      return (
+        <div className={`${layout.postBoxPosition === 'left' ? 'w-[220px]' : 'w-[280px]'} flex-shrink-0 ${postBoxClasses}`}>
+          <form
+            onSubmit={handleSubmitPost}
+            className="bg-white rounded-lg shadow p-4 flex flex-col gap-3 items-center mb-6"
+          >
+            <Avatar src={currentUser.avatar} alt={currentUser.name} size={44} />
+            <input
+              type="text"
+              className={getClass("post_input", "w-full border border-gray-200 rounded-full px-4 py-2 focus:outline-blue-500")}
+              value={newPost}
+              onChange={(e) => setNewPost(e.target.value)}
+              placeholder={getText("post_placeholder", "Share something...")}
+              maxLength={300}
+            />
+            <button
+              type="submit"
+              className={getClass("post_button", "w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full px-4 py-2 font-medium disabled:bg-blue-200")}
+              disabled={!newPost.trim()}
+            >
+              {getText("post_button", "Post")}
+            </button>
+          </form>
+        </div>
+      );
+    }
+
+    return (
+      <form
+        onSubmit={handleSubmitPost}
+        className="bg-white rounded-lg shadow p-4 flex gap-3 items-center mb-6"
+      >
+        <Avatar src={currentUser.avatar} alt={currentUser.name} size={44} />
+        <input
+          type="text"
+          className={getClass("post_input", "flex-1 border border-gray-200 rounded-full px-4 py-2 focus:outline-blue-500")}
+          value={newPost}
+          onChange={(e) => setNewPost(e.target.value)}
+          placeholder={getText("post_placeholder", "Share something...")}
+          maxLength={300}
+        />
+        <button
+          type="submit"
+          className={getClass("post_button", "bg-blue-600 hover:bg-blue-700 text-white rounded-full px-4 py-2 font-medium disabled:bg-blue-200")}
+          disabled={!newPost.trim()}
+        >
+          {getText("post_button", "Post")}
+        </button>
+      </form>
+    );
+  };
+
+  const getMainLayoutClasses = () => {
+    switch (layout.mainLayout) {
+      case 'default':
+        return 'w-full flex gap-2 justify-center min-h-screen';
+      case 'reverse':
+        return 'w-full flex gap-2 justify-center min-h-screen flex-row-reverse';
+      case 'vertical':
+        return 'w-full flex flex-col gap-2 justify-center min-h-screen';
+      case 'horizontal':
+        return 'w-full flex flex-row gap-2 justify-center min-h-screen';
+      case 'grid':
+        return 'w-full grid grid-cols-1 lg:grid-cols-3 gap-4 min-h-screen';
+      case 'sidebar-top':
+        return 'w-full flex flex-col gap-2 justify-center min-h-screen';
+      case 'sidebar-bottom':
+        return 'w-full flex flex-col gap-2 justify-center min-h-screen';
+      case 'center-focus':
+        return 'w-full flex gap-2 justify-center min-h-screen';
+      case 'split-view':
+        return 'w-full grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-screen';
+      case 'masonry':
+        return 'w-full columns-1 md:columns-2 lg:columns-3 gap-4 min-h-screen';
+      default:
+        return 'w-full flex gap-2 justify-center min-h-screen';
+    }
+  };
+
+  const renderMainContent = () => {
+    if (layout.mainLayout === 'grid' || layout.mainLayout === 'split-view') {
+      return (
+        <>
+          {renderSidebar('left')}
+          <main className="w-full max-w-[950px] mx-auto flex-1 px-6">
+            <section>
+              {renderPostBox()}
+              {renderPostsBlock()}
+            </section>
+          </main>
+          {renderSidebar('right')}
+        </>
+      );
+    }
+
+    if (layout.mainLayout === 'masonry') {
+      return (
+        <div className="space-y-4">{renderPostsBlock()}</div>
+      );
+    }
+
+    if (layout.mainLayout === 'sidebar-top') {
+      return (
+        <>
+          {renderSidebar('top')}
+          <main className="w-full max-w-[950px] mx-auto flex-1 px-6">
+            <section>
+              {renderPostBox()}
+              {renderPostsBlock()}
+            </section>
+          </main>
+        </>
+      );
+    }
+
+    if (layout.mainLayout === 'sidebar-bottom') {
+      return (
+        <>
+          <main className="w-full max-w-[950px] mx-auto flex-1 px-6">
+            <section>
+              {renderPostBox()}
+              {renderPostsBlock()}
+            </section>
+          </main>
+          {renderSidebar('bottom')}
+        </>
+      );
+    }
+
+    return (
+      <>
+        {renderSidebar('left')}
+        <main className="w-full max-w-[950px] mx-auto flex-1 px-6">
+          <section>
+            {renderPostBox()}
+            {renderPostsBlock()}
+          </section>
+        </main>
+        {renderSidebar('right')}
+      </>
+    );
+  };
+
+  const wrapperPadding = layout.headerPosition === 'left' ? 'pl-56' : layout.headerPosition === 'right' ? 'pr-56' : '';
+
+  return (
+    <div className={`${getMainLayoutClasses()} ${wrapperPadding}`}>
+      {renderMainContent()}
+    </div>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <DataReadyGate>
+      <HomeContent />
+    </DataReadyGate>
+  );
+}

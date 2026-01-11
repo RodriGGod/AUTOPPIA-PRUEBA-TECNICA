@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-01-11T20:15:08.487571",
+  "total_execution_time": 0.0,
+  "agents": {
+    "Technical Test Agent (Contact Form)": {
+      "agent-id": "technical_test_agent",
+      "score_statistics": {
+        "count": 18,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "stdev": 0.0
+      },
+      "avg_solution_time": 0.0027582645416259766,
+      "avg_evaluation_time": 0.0,
+      "tasks": {
+        "c7f0aa71-33a3-49a1-90f4-e2aa288f0b5b": {
+          "use_case": "FILM_DETAIL",
+          "prompt": "Show details for a movie released in the year '2016', '2020', or '2004'",
+          "score": 0.0,
+          "solution_time": 0.0027551651000976562,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "14b6c442-dea8-4877-9306-411b8e46d48f": {
+          "use_case": "LOGIN",
+          "prompt": "First, authenticate with username '<web_agent_id>' and password 'password123' to log in successfully.",
+          "score": 0.0,
+          "solution_time": 0.0030889511108398438,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "dd493703-36b1-4fcc-96ce-eee758bab282": {
+          "use_case": "DELETE_FILM",
+          "prompt": "Delete a film whose name contains 'boy' and whose year is greater than 1994.",
+          "score": 0.0,
+          "solution_time": 0.00251007080078125,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "f4127982-6f48-4628-93ce-16228ba74c65": {
+          "use_case": "LOGOUT",
+          "prompt": "First, authenticate with username '<web_agent_id>' and password 'password123' before logging out of the platform.",
+          "score": 0.0,
+          "solution_time": 0.003345966339111328,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "d2b894f1-d08b-42ff-aa38-da0f3c65b280": {
+          "use_case": "FILTER_FILM",
+          "prompt": "Filter for films where genre equals 'Thriller'.",
+          "score": 0.0,
+          "solution_time": 0.003072977066040039,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "87c67a9b-9a06-477c-8b18-76e6d7217017": {
+          "use_case": "SEARCH_FILM",
+          "prompt": "Search for the movie 'Finding Nemo' in the database",
+          "score": 0.0,
+          "solution_time": 0.0024194717407226562,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "ab34bcba-7ff8-4911-9eb1-e6fb9d099f44": {
+          "use_case": "CONTACT",
+          "prompt": "Go to the contact page and fill out the form where the subject is NOT 'Information' and the email is NOT 'user@yahoo.com'.",
+          "score": 0.0,
+          "solution_time": 0.0028204917907714844,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "67fbf2e8-1b38-4061-b28c-17ebf1fdb00b": {
+          "use_case": "REGISTRATION",
+          "prompt": "Please register using username 'newuser<web_agent_id>', email 'newuser<web_agent_id>@gmail.com', and password 'password123'.",
+          "score": 0.0,
+          "solution_time": 0.003054380416870117,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "e2221a41-5ff8-4a18-8d84-c2b46d357311": {
+          "use_case": "ADD_COMMENT",
+          "prompt": "Post a comment to a movie with a commenter name that is NOT 'Emily'.",
+          "score": 0.0,
+          "solution_time": 0.0029714107513427734,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "c59703bf-aa12-4a3a-996c-357d9ec613ef": {
+          "use_case": "EDIT_FILM",
+          "prompt": "Edit a film where the name equals 'Spirited Away', the genres equal 'Animation', and the duration is 127 minutes or less.",
+          "score": 0.0,
+          "solution_time": 0.0030341148376464844,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "135533d7-17a1-4304-b499-c81a773186ff": {
+          "use_case": "ADD_FILM",
+          "prompt": "Add a film whose year equals '2007' and that has a rating greater than or equal to '3.2'.",
+          "score": 0.0,
+          "solution_time": 0.0023806095123291016,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "f2449986-c5f3-4b1f-bd9e-27d02f0e4bc3": {
+          "use_case": "EDIT_USER",
+          "prompt": "Login for the following username:user<web_agent_id> and password:password123. Modify your profile to ensure your first name is NOT 'car', your location CONTAINS 'movie', your last name is equal to 'car', and your website is NOT 'https://filmjournals.example.io'.",
+          "score": 0.0,
+          "solution_time": 0.0024328231811523438,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "b831f148-ac2d-4d36-ae39-2571a20b3162": {
+          "use_case": "ADD_TO_WATCHLIST",
+          "prompt": "Add to wishlist a movie with a rating NOT equal to '4.8' that contains the genre 'Comedy' and is NOT directed by someone whose name contains 'exh'",
+          "score": 0.0,
+          "solution_time": 0.0026051998138427734,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "413feda4-d63b-47b9-9538-ccdbf6267c1b": {
+          "use_case": "ADD_PRODUCT_TO_WATCHLIST",
+          "prompt": "Add to wishlist a film where the name does NOT CONTAIN 'grv' and the year is equal to '2015'",
+          "score": 0.0,
+          "solution_time": 0.002442598342895508,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "8dffeaf3-cc0c-461c-9109-681b6e752c68": {
+          "use_case": "REMOVE_FROM_WATCHLIST",
+          "prompt": "Retrieve details of a film released before '2015' that does NOT contain the genre 'Crime' and is NOT named 'Drive'",
+          "score": 0.0,
+          "solution_time": 0.0022873878479003906,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "ba0bfecb-df9d-4d6a-a1ad-66c468f62b19": {
+          "use_case": "RATE_FILM",
+          "prompt": "Retrieve details of a movie with a rating of 4.6 or less",
+          "score": 0.0,
+          "solution_time": 0.002360105514526367,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "37cce9ef-5f3e-49db-9972-c7990d2dfaf3": {
+          "use_case": "SHARE_MOVIE",
+          "prompt": "Share details for a movie with a rating greater than '4.6', released in the year '2001', and with a duration equal to '125' minutes.",
+          "score": 0.0,
+          "solution_time": 0.0030791759490966797,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "3b5a2225-3e03-41b8-986f-c1a999bddfa9": {
+          "use_case": "WATCH_TRAILER",
+          "prompt": "Watch the trailer for a movie whose genres are NOT in the list [\u2018Crime\u2019, \u2018Adventure\u2019], released in a year that is NOT in the list [\u20181995\u2019, \u20182014\u2019, \u20182008\u2019], and has a rating of 4.9 or lower.",
+          "score": 0.0,
+          "solution_time": 0.0029878616333007812,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        }
+      }
+    }
+  }
+}
