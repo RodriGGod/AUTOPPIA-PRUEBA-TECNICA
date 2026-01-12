@@ -55,7 +55,13 @@ class BackendDemoWebService:
     def __init__(self, web_project: WebProject, web_agent_id: str = "unknown_agent") -> None:
         self._session: aiohttp.ClientSession | None = None
         self.web_project = web_project
-        self.base_url = web_project.backend_url
+        
+        # Patch for Docker connectivity: Use AGENT_HOST if set
+        agent_host = os.getenv("AGENT_HOST")
+        if agent_host and ("localhost" in web_project.backend_url or "127.0.0.1" in web_project.backend_url):
+            self.base_url = web_project.backend_url.replace("localhost", agent_host).replace("127.0.0.1", agent_host)
+        else:
+            self.base_url = web_project.backend_url
         # Use frontend URL for event grouping to avoid port mismatches
         self.web_url = web_project.frontend_url or web_project.backend_url
         self.web_agent_id = web_agent_id
