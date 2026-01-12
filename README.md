@@ -50,7 +50,15 @@ Creación y visualización del "Simple Agent" resolviendo el formulario de conta
 
 **Comandos de Prueba:**
 ```bash
-# 1. Iniciar el servidor del agente (en una terminal nueva)
+# 1. Preparar Entorno del Agente (Solo la primera vez)
+python -m venv venv
+# Windows:
+.\venv\Scripts\activate
+# Mac/Linux:
+# source venv/bin/activate
+pip install flask
+
+# 2. Iniciar el servidor del agente (en una terminal nueva)
 python simple_agent/agent_server.py
 
 # 2. Ejecutar la visualización (requiere Docker)
