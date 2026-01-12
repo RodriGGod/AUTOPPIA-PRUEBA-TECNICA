@@ -115,4 +115,7 @@ The Docker container is isolated. The agent is on Windows. We used `AGENT_HOST=h
 ## 🏗️ Final Architecture
 1.  **Host Machine**: Runs `agent_server.py` (Port 7000) and the `web_8` demo (Port 8000).
 2.  **Docker Container**: Behaves as the "Evaluator".
-3.  **Flow**: Docker requests solution -> Host Agent replies -> Docker executes & validates.
+3.  **Flow (Interaction)**:
+    *   **Step A (Request):** The Docker Test (acting as a client) sends the task instructions to `http://host.docker.internal:7000/solve_task` (Your Windows Agent).
+    *   **Step B (Thinking):** Your Windows Agent calculates the necessary steps (e.g., "Type 'Alice'").
+    *   **Step C (Response & Action):** The Agent sends these steps back to Docker. The Docker container then *physically* executes them in its internal browser to check if they work.
