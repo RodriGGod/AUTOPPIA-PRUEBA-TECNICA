@@ -48,6 +48,7 @@ Open two PowerShell terminals to run the Web and the Agent:
 
 ```powershell
 # Terminal 1: Start the Web App
+cd autoppia_webs_demo
 ./scripts/setup.sh --demo=autocinema --web_port=8000
 
 # Terminal 2: Start the Agent
