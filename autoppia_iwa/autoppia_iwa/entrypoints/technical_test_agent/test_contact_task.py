@@ -18,7 +18,8 @@ from autoppia_iwa.src.web_agents.classes import TaskSolution
 
 # Configuration
 PROJECT_ID = "autocinema"
-AGENT_HOST = "127.0.0.1"
+import os
+AGENT_HOST = os.getenv("AGENT_HOST", "127.0.0.1")
 AGENT_PORT = 7000
 AGENT_TIMEOUT = 120
 

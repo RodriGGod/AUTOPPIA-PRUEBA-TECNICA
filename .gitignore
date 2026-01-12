@@ -1,11 +1,49 @@
-node_modules/
-dist/
-build/
+/*__pycache__/
 __pycache__/
 *.pyc
-.DS_Store
-.vscode/
-.idea/
-coverage/
-*.log
+*.config
+notebooks/
+.ipynb_checkpoints
 .env
+.venv
+env/
+venv/
+.idea
+*.json
+data/web_analysis_files/*
+*.gif
+*.egg-info
+build/
+~
+.vscode
+# You can comment to connit the evaluation image as wwll
+output.png
+
+# Generated outputs (now in outputs/ directory)
+# Legacy entries kept for backwards compatibility
+benchmark.log
+prompt_test.log
+real_web_evaluation.log
+projects_status.json
+
+# Generated outputs (benchmark, training, verification)
+data/outputs/**
+
+# Legacy paths (kept for backwards compatibility during transition)
+data/benchmark/**
+data/cache/**
+data/rl/**
+data/rm/**
+data/score_model_pipeline/**
+data/web_verification/**
+
+stress_test.log
+
+prompt_test_output/*
+
+*.webm
+.pytest_cache
+*.jsonl
+.venv_docker
+node_modules/
+venv_docker/

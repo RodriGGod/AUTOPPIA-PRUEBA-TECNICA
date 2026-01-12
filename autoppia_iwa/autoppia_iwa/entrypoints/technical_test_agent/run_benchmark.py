@@ -7,10 +7,6 @@ El agente esperado está hardcodeado para el formulario de contacto de autocinem
 
 import asyncio
 from loguru import logger
-from dotenv import load_dotenv
-
-# Force reload of .env to avoid caching issues
-load_dotenv(override=True)
 
 from autoppia_iwa.entrypoints.benchmark.benchmark import Benchmark
 from autoppia_iwa.entrypoints.benchmark.config import BenchmarkConfig
