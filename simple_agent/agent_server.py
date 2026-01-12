@@ -102,18 +102,18 @@ def generate_form_actions(url, fields):
         value = final_fields[key]
         selector = get_field_selector(key)
         
-        # Eliminamos ClickAction explícito y esperas intermedias
-        # TypeAction debería manejar el foco automáticamente en la mayoría de runners
+        
         actions.append({"type": "TypeAction", "text": value, "selector": selector})
+        
 
-    # 4. Submit
+    
     submit_selector = {
         "type": "xpathSelector",
         "value": "//section[@id='contact']//button[@type='submit']"
     }
     
     actions.append({"type": "ClickAction", "selector": submit_selector})
-    # Espera suficiente para que el evento se registre y la prueba verifique, pero no excesiva
+    # Espera suficiente para que el evento se registre
     actions.append({"type": "WaitAction", "time_seconds": 2.0})
     
     return actions
