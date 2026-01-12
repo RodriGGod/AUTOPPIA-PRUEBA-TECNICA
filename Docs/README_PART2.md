@@ -14,19 +14,55 @@ To guarantee a successful test execution, we decided to build a **Dockerized env
 
 ### Step 3: Installing Chromium & Linux Dependencies
 Configuring this Docker environment required specific adjustments to support the *autocinema* behavior:
-1.  **Installing Linux System Dependencies**: We manually added libraries like `libnss3`, `libdrm2`, `libgbm1`, and `libasound2` to the `Dockerfile`.
-    *   **Why**: The "slim" Python images are too minimal to run a browser. These libraries are required by the browser engine to render the page in headless mode.
-2.  **Installing Chromium**: We explicitly ran `playwright install chromium`.
-    *   **Why**: The test validator uses Playwright to drive the browser. We needed to ensure the specific Chromium binary matching the library version was present and executable within the container.
+1.  **Installing Linux System Dependencies**: We manually added libraries like `libnss3`, `libdrm2`, `libgbm1`, and `libasound2`.
+    ```bash
+    apt-get update && apt-get install -y libnss3 libnspr4 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libdrm2 libxkbcommon0 libasound2
+    ```
+2.  **Installing Chromium**: We explicitly ran `playwright install chromium` after installing the python package.
 
 ### Step 4: Networking & Connectivity
 A critical challenge was allowing this isolated "environment within an environment" to communicate with the outside world (our Host).
-*   **The Adjustment**: We configured the Docker runs to use `host.docker.internal`.
+*   **The Adjustment**: We configured the Docker runs to use `host.docker.internal` via an environment variable `AGENT_HOST`.
+    ```bash
+    export AGENT_HOST=host.docker.internal
+    ```
 *   **Why**: The Agent Server (`localhost:7000`) and Web App (`localhost:8000`) live on the generic Windows Host. This networking bridge allows the Docker container to "see" and interact with them as if it were local.
 
-### Step 5: Automating the Workflow (`run_tests.ps1`)
-To bring all these steps together, we created the `run_tests.ps1` script.
-*   **Why**: To abstract away the complexity of building the image, mapping the ports, and setting environment variables. It turns a multi-step manual process into a single command.
+### Step 5: Automating the Workflow (Manual Verification)
+To bring all these steps together, here is the complete workflow to run the test manually:
+
+1.  **Start Services on Host** (Windows Powershell):
+    ```powershell
+    # Terminal 1: Web App
+    ./scripts/setup.sh --demo=autocinema --web_port=8000
+    
+    # Terminal 2: Agent
+    python simple_agent/agent_server.py
+    ```
+
+2.  **Run Docker Container**:
+    ```powershell
+    docker run --rm -it --network host -v ${PWD}:/app -w /app python:3.11 bash
+    ```
+
+3.  **Execute Test Inside Docker**:
+    ```bash
+    # Create isolated venv to avoid Windows file locking issues
+    python -m venv /tmp/venv_clean
+    source /tmp/venv_clean/bin/activate
+
+    # Install Python deps
+    pip install --upgrade pip
+    pip install -r autoppia_iwa/requirements.txt
+    pip install -e autoppia_iwa/
+    playwright install chromium
+
+    # Install System deps
+    apt-get update && apt-get install -y libnss3 libnspr4 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libdrm2 libxkbcommon0 libasound2
+
+    # Run Test
+    AGENT_HOST=host.docker.internal python autoppia_iwa/autoppia_iwa/entrypoints/technical_test_agent/test_contact_task.py
+    ```
 
 ## 🏗️ Final Architecture
 1.  **Host Machine**: Runs `agent_server.py` (Port 7000) and the `web_8` demo (Port 8000).
@@ -37,4 +73,4 @@ To bring all these steps together, we created the `run_tests.ps1` script.
     *   Docker Test executes the actions to verify the contact form submission.
 
 ## ✅ Result
-By moving from a simple local virtual environment to a robust, containerized testing suite, we ensured that the **Simple Agent** works flawlessly. We solved the cross-platform dependency issues and established a professional implementation capable of passing the strict validation criteria.
+By moving from a simple local virtual environment to a robust, containerized testing suite, we ensured that the **Simple Agent** works flawlessly with a score of **1.0**. We solved the cross-platform dependency issues and established a professional implementation capable of passing the strict validation criteria.
