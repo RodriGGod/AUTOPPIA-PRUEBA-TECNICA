@@ -4,6 +4,7 @@ import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { format } from "date-fns";
 import { WherePopover } from "@/components/WherePopover";
+import { useSeedRouter } from "@/hooks/useSeedRouter";
 import { DateRangePopover } from "@/components/DateRangePopover";
 import { GuestSelectorPopover } from "@/components/GuestSelectorPopover";
 import { PropertyCard } from "@/components/PropertyCard";
@@ -52,6 +53,7 @@ function clamp(value: number, min: number, max: number) {
 }
 
 function HomeContent() {
+  const router = useSeedRouter();
   const { getText, getId, getClass } = useV3Attributes();
   const searchParams = useSearchParams();
   const {
@@ -513,8 +515,7 @@ function HomeContent() {
       timestamp: new Date().toISOString(),
     });
 
-    // Navegar a la página del hotel (puedes cambiar esto según tu lógica de navegación)
-    window.location.href = `/stay/${hotel.id}`;
+    router.push(`/stay/${hotel.id}`);
   };
 
   return (

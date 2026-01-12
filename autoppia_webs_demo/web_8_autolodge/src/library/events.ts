@@ -73,6 +73,7 @@ export function logEvent(
       ...extra_headers,
     },
     body: JSON.stringify(backendPayload),
+    keepalive: true,
   }).catch((error) => {
     console.error("❌ Failed to log event:", error);
     throw error;
