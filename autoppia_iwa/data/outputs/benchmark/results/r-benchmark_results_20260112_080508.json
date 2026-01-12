@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-01-12T08:05:08.478882",
+  "total_execution_time": 0.0,
+  "agents": {
+    "Technical Test Agent (Contact Form)": {
+      "agent-id": "technical_test_agent",
+      "score_statistics": {
+        "count": 18,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "stdev": 0.0
+      },
+      "avg_solution_time": 0.002630472183227539,
+      "avg_evaluation_time": 0.0,
+      "tasks": {
+        "bb91a9fd-3655-4bac-8375-e1f65cbf3604": {
+          "use_case": "FILM_DETAIL",
+          "prompt": "Navigate to the details page for a movie whose name is NOT 'Mad Max: Fury Road' and where the director's name CONTAINS 'ch'",
+          "score": 0.0,
+          "solution_time": 0.00527644157409668,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "62502769-1d05-4846-b31d-f6cdb9e5d80f": {
+          "use_case": "LOGIN",
+          "prompt": "First, authenticate with username '<web_agent_id>' and password 'password123' to log in successfully.",
+          "score": 0.0,
+          "solution_time": 0.0021834373474121094,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "6e7e23c4-b68a-4fbe-9f22-47f9fc88f690": {
+          "use_case": "DELETE_FILM",
+          "prompt": "Delete a film that belongs to the genres containing 'Drama'.",
+          "score": 0.0,
+          "solution_time": 0.0024263858795166016,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "2f62dd7d-988c-4d51-a5f7-9fa936a63e90": {
+          "use_case": "LOGOUT",
+          "prompt": "First, authenticate with username '<web_agent_id>' and password 'password123' to log out of the platform.",
+          "score": 0.0,
+          "solution_time": 0.0022737979888916016,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "4cefff07-d345-4575-968c-0095b2cd30ce": {
+          "use_case": "FILTER_FILM",
+          "prompt": "Filter for films in the Fantasy genre.",
+          "score": 0.0,
+          "solution_time": 0.002586841583251953,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "5934c1b6-e301-4d79-95d7-681a0ee31edf": {
+          "use_case": "SEARCH_FILM",
+          "prompt": "Search for the movie that is NOT 'Get Out'",
+          "score": 0.0,
+          "solution_time": 0.0022842884063720703,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "535163d6-c686-44c1-ae20-c0525cf546a9": {
+          "use_case": "CONTACT",
+          "prompt": "Go to the contact page and send a form with a message equal to 'I'm writing to request support', a subject that is NOT equal to 'Complaint', and an email that does NOT contain 'test@example.com'.",
+          "score": 0.0,
+          "solution_time": 0.0038084983825683594,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "2b6fc733-9eb3-424d-9fa7-2e737e5f30ae": {
+          "use_case": "REGISTRATION",
+          "prompt": "Please register using username 'newuser<web_agent_id>', email 'newuser<web_agent_id>@gmail.com', and password 'password123'.",
+          "score": 0.0,
+          "solution_time": 0.002409219741821289,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "a1ee59ef-4722-4a88-8808-f403e0e1aa0e": {
+          "use_case": "ADD_COMMENT",
+          "prompt": "Add a comment to a movie whose name contains 'The Prestige' with a comment whose content does NOT equal 'subtle character arcs' and a commenter name that contains 'Emily'.",
+          "score": 0.0,
+          "solution_time": 0.002907276153564453,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "ad6d1fcc-1999-4910-8848-cbb9b8dc1607": {
+          "use_case": "EDIT_FILM",
+          "prompt": "Modify the film where the name equals 'The Incredibles' and the rating equals 1.9.",
+          "score": 0.0,
+          "solution_time": 0.0022125244140625,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "6bce82d0-7a1a-4d78-a1fd-afe798004785": {
+          "use_case": "ADD_FILM",
+          "prompt": "Add a film with a duration of 171 minutes or less, released in or before the year 1958, with a rating equal to 2.0, and belonging to the genre of Crime.",
+          "score": 0.0,
+          "solution_time": 0.002553224563598633,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "5d5a7397-a1a6-4407-bdf0-556e2c44f1dc": {
+          "use_case": "EDIT_USER",
+          "prompt": "Login for the following username:user<web_agent_id> and password:password123. Update your profile to include 'Documentary' in your favorite genres, ensure your location does NOT contain 'green', and confirm that your website does NOT contain 'https://filmcritics.example.com'.",
+          "score": 0.0,
+          "solution_time": 0.002230405807495117,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "7a70a424-7ba8-48ba-b106-6456f64029a7": {
+          "use_case": "ADD_TO_WATCHLIST",
+          "prompt": "Add to wishlist a movie where the year is equal to '2017' and the rating is equal to '4.6' with a director whose name contains 'el'",
+          "score": 0.0,
+          "solution_time": 0.0025339126586914062,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "71a2c53f-148a-4e24-b78d-96cd9596859a": {
+          "use_case": "ADD_PRODUCT_TO_WATCHLIST",
+          "prompt": "Add to wishlist a movie whose name does NOT contain 'gjr'",
+          "score": 0.0,
+          "solution_time": 0.0022377967834472656,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "5d8f5512-955b-4bd7-b95b-0df4f4d9473d": {
+          "use_case": "REMOVE_FROM_WATCHLIST",
+          "prompt": "Retrieve details of the movie with a name equal to 'Oldboy', a rating less than 4.8, and a duration greater than or equal to 100 minutes.",
+          "score": 0.0,
+          "solution_time": 0.002227783203125,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "a89f77e1-8979-429d-bb1c-28bf1f7d7264": {
+          "use_case": "RATE_FILM",
+          "prompt": "Retrieve details of a movie with a rating of 4.6 or higher that was released on or before '2009'",
+          "score": 0.0,
+          "solution_time": 0.0022668838500976562,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "a8946a7c-ac8f-4753-8767-592916595d0f": {
+          "use_case": "SHARE_MOVIE",
+          "prompt": "Share details for a movie with a duration greater than 130 minutes.",
+          "score": 0.0,
+          "solution_time": 0.0027403831481933594,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "6e2b0761-8338-45b9-93fc-e0801ea55b0e": {
+          "use_case": "WATCH_TRAILER",
+          "prompt": "Play the trailer of a movie with a rating greater than '4.5'",
+          "score": 0.0,
+          "solution_time": 0.0021893978118896484,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        }
+      }
+    }
+  }
+}

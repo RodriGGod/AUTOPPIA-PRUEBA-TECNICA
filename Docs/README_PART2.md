@@ -1,76 +1,117 @@
 # README - Part 2: Agent Implementation & Testing Journey
 
 ## Overview
-This document chronicles the step-by-step process we followed to build, debug, and validate the **Simple Agent** for the Auttopia technical test. It details the challenges effectively solved and the final robust architecture we established.
+This document chronicles the step-by-step process we followed to build, debug, and validate the **Simple Agent** for the Auttopia technical test. 
 
-## 🚀 The Journey: From Setup to Success
+## 🚀 The Agent: Setup & Logic
 
-### Step 1: Initial Development in Virtual Environment
-We began the implementation by setting up a standard **Python virtual environment** locally. This allowed us to develop the core logic of the agent (parsing and action generation) in a contained space. However, as we moved to the validation phase using the `autoppia_iwa` harness on Windows, we encountered significant compatibility issues with the complex dependency chain.
+### Step 0: Prerequisites & Installation (Local Host)
+Before starting, ensure the agent's dependencies are installed **in a local virtual environment** on your Windows machine (Host).
 
-### Step 2: Creating an "Environment within an Environment"
-To guarantee a successful test execution, we decided to build a **Dockerized environment** inside our project structure.
-*   **Why**: The local virtual environment couldn't reliably isolate the system-level differences between Windows and the Linux-based expectations of the test runner. A container provides a reproducible "laboratory" that behaves exactly the same way every time.
+**Installation Commands:**
+```bash
+# 1. Create a virtual environment (Recommended)
+python -m venv venv
 
-### Step 3: Installing Chromium & Linux Dependencies
-Configuring this Docker environment required specific adjustments to support the *autocinema* behavior:
-1.  **Installing Linux System Dependencies**: We manually added libraries like `libnss3`, `libdrm2`, `libgbm1`, and `libasound2`.
-    ```bash
-    apt-get update && apt-get install -y libnss3 libnspr4 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libdrm2 libxkbcommon0 libasound2
-    ```
-2.  **Installing Chromium**: We explicitly ran `playwright install chromium` after installing the python package.
+# 2. Activate the virtual environment
+# Windows:
+.\venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
 
-### Step 4: Networking & Connectivity
-A critical challenge was allowing this isolated "environment within an environment" to communicate with the outside world (our Host).
-*   **The Adjustment**: We configured the Docker runs to use `host.docker.internal` via an environment variable `AGENT_HOST`.
-    ```bash
-    export AGENT_HOST=host.docker.internal
-    ```
-*   **Why**: The Agent Server (`localhost:7000`) and Web App (`localhost:8000`) live on the generic Windows Host. This networking bridge allows the Docker container to "see" and interact with them as if it were local.
+# 3. Install Flask (The only dependency for the agent)
+pip install flask
+```
 
-### Step 5: Automating the Workflow (Manual Verification)
-To bring all these steps together, here is the complete workflow to run the test manually:
+### 🤖 How the Agent Works (Junior Dev Version)
+Imagine the agent is a little robot waiter 🤖.
+1.  **It listens:** You tell it "Hey, fill this contact form for Alice" (The Prompt).
+2.  **It thinks:** It looks for keywords like "subject='Help'" to understand what to write.
+3.  **It acts:** It goes to the webpage, finds the box that looks like "Subject", types "Help", and hits the "Send" button for you.
+It's basically automating what a human would do with a keyboard and mouse!
 
-1.  **Start Services on Host** (Windows Powershell):
-    ```powershell
-    # Terminal 1: Web App
-    ./scripts/setup.sh --demo=autocinema --web_port=8000
-    
-    # Terminal 2: Agent
-    python simple_agent/agent_server.py
-    ```
+### ⚙️ Main Methods (The Brains)
+Under the hood, `agent_server.py` relies on these key functions:
 
-2.  **Run Docker Container**:
-    ```powershell
-    docker run --rm -it --network host -v ${PWD}:/app -w /app python:3.11 bash
-    ```
+*   **`detect_task_type(prompt)`**: The **Decision Maker**. It looks at your text to decide if you want to fill a form (`FORM_FILLING`) or if it should just ignore you (`UNKNOWN`).
+*   **`extract_form_fields(prompt)`**: The **Parser**. It uses "Regex" (text patterns) to pull out specific data like `name='Bond'` or `email='007@mi6.uk'` from your sentence.
+*   **`get_field_selector(field_name)`**: The **Navigator**. It guesses where to type. If you say "email", it looks for an input field on the website that expects an email address.
+*   **`generate_form_actions(url, fields)`**: The **Director**. It creates the step-by-step movie script: "Go to URL" -> "Wait a sec" -> "Type Name" -> "Click Submit".
 
-3.  **Execute Test Inside Docker**:
-    ```bash
-    # Create isolated venv to avoid Windows file locking issues
-    python -m venv /tmp/venv_clean
-    source /tmp/venv_clean/bin/activate
+---
 
-    # Install Python deps
-    pip install --upgrade pip
-    pip install -r autoppia_iwa/requirements.txt
-    pip install -e autoppia_iwa/
-    playwright install chromium
+## 🧪 Testing Workflow (The Complete Guide)
+This is the **exact process** to verify the agent. We use a standardized Docker container to avoid Windows compatibility headaches (like missing Linux libraries for Playwright).
 
-    # Install System deps
-    apt-get update && apt-get install -y libnss3 libnspr4 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libdrm2 libxkbcommon0 libasound2
+### 1. Start Services on Host (Windows)
+Open two PowerShell terminals to run the Web and the Agent:
 
-    # Run Test
-    AGENT_HOST=host.docker.internal python autoppia_iwa/autoppia_iwa/entrypoints/technical_test_agent/test_contact_task.py
-    ```
+```powershell
+# Terminal 1: Start the Web App
+./scripts/setup.sh --demo=autocinema --web_port=8000
+
+# Terminal 2: Start the Agent
+python simple_agent/agent_server.py
+```
+
+> **💡 Junior Dev Tip: Why `0.0.0.0`?**
+> The agent starts on `0.0.0.0:7000`. 
+> *   **`0.0.0.0` (Host):** Means "I'm open to talk to everyone" (including Docker), not just `localhost`.
+> *   **`7000` (Port):** Is the specific "door" number to knock on.
+
+### 2. Enter the Docker Testing Lab
+In a third terminal, launch the container that mimics the grading environment:
+
+```powershell
+docker run --rm -it --network host -v ${PWD}:/app -w /app python:3.11 bash
+```
+
+### 3. Initialize Environment INSIDE Docker
+Once inside the container (`root@...:/app#`), run these commands one by one. This setup solves all the dependency issues we encountered:
+
+```bash
+# A. Create an isolated venv (Crucial to avoid Windows file locking issues)
+python -m venv /tmp/venv_clean
+source /tmp/venv_clean/bin/activate
+
+# B. Install Python Dependencies
+pip install --upgrade pip
+pip install -r autoppia_iwa/requirements.txt
+pip install -e autoppia_iwa/
+
+# C. Install Playwright & Browsers
+playwright install chromium
+
+# D. Install System Dependencies (The "Headaches" Solved)
+# These libraries are required for Chromium to run in this specific Debian/Ubuntu container
+apt-get update && apt-get install -y libnss3 libnspr4 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libdrm2 libxkbcommon0 libasound2
+```
+
+### 4. Run the Test
+Finally, execute the verification script pointing to your host agent:
+
+```bash
+# We use host.docker.internal so Docker can "see" your Windows agent
+AGENT_HOST=host.docker.internal python autoppia_iwa/autoppia_iwa/entrypoints/technical_test_agent/test_contact_task.py
+```
+
+**Expected Output:**
+> "Technical Test Agent (Contact Form) | 100.00% (1/1) | Passed" 
+
+---
+
+## 📜 The Context: Why did we do this? (The Journey)
+
+### Challenge 1: Windows vs Linux
+We started developing locally, but the test runner expects a Linux environment. By using Docker (Step 2 above), we created a reproducible "clean room" for testing.
+
+### Challenge 2: Dependency Hell
+The Docker container was missing low-level libraries for the browser (`libgbm`, `libasound`, etc.). We identified and installed them manually (Step 3D) to ensure Playwright could launch the browser.
+
+### Challenge 3: Connectivity
+The Docker container is isolated. The agent is on Windows. We used `AGENT_HOST=host.docker.internal` (Step 4) to build a bridge between them.
 
 ## 🏗️ Final Architecture
 1.  **Host Machine**: Runs `agent_server.py` (Port 7000) and the `web_8` demo (Port 8000).
-2.  **Docker Container**: A specialized environment verifying the logic.
-3.  **Flow**:
-    *   Docker Test requests solution from Host Agent.
-    *   Host Agent parses specific fields using regex (e.g., `subject`, `message`) and maps them to selectors.
-    *   Docker Test executes the actions to verify the contact form submission.
-
-## ✅ Result
-By moving from a simple local virtual environment to a robust, containerized testing suite, we ensured that the **Simple Agent** works flawlessly with a score of **1.0**. We solved the cross-platform dependency issues and established a professional implementation capable of passing the strict validation criteria.
+2.  **Docker Container**: Behaves as the "Evaluator".
+3.  **Flow**: Docker requests solution -> Host Agent replies -> Docker executes & validates.

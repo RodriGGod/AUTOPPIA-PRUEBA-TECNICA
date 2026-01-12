@@ -1,0 +1,2292 @@
+{
+  "d9c49674-d2e6-4909-9bd6-a04b18756c65": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201074.861669,
+      "solution": {
+        "task_id": "d9c49674-d2e6-4909-9bd6-a04b18756c65",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=776",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "79070275-f6da-41d1-a25d-cc6359577892": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201085.741435,
+      "solution": {
+        "task_id": "79070275-f6da-41d1-a25d-cc6359577892",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=233",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "ff27b02e-917e-4504-96fd-fcc4bf1a4ada": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201090.0691197,
+      "solution": {
+        "task_id": "ff27b02e-917e-4504-96fd-fcc4bf1a4ada",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=669",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "d68b43a8-a5b9-4333-9261-eb774b66e3bb": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201094.3678725,
+      "solution": {
+        "task_id": "d68b43a8-a5b9-4333-9261-eb774b66e3bb",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=941",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 1.5,
+            "timeout_seconds": 5.0
+          },
+          {
+            "type": "ScrollAction",
+            "selector": null,
+            "value": null,
+            "up": false,
+            "down": true,
+            "left": false,
+            "right": false
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "Your name",
+              "case_sensitive": false
+            },
+            "text": "Agent Smith"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "you@example.com",
+              "case_sensitive": false
+            },
+            "text": "agent@example.com"
+          },
+          {
+            "type": "ClickAction",
+            "selector": {
+              "type": "xpathSelector",
+              "attribute": null,
+              "value": "//section[@id='contact']//button[@type='submit']",
+              "case_sensitive": false
+            },
+            "x": null,
+            "y": null
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "77e20ea9-e8a7-4c4b-8b95-5da5244e36db": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201104.0688035,
+      "solution": {
+        "task_id": "77e20ea9-e8a7-4c4b-8b95-5da5244e36db",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=370",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "7743fbf1-7493-4abd-b54f-8a2dcf03b3c9": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201108.430101,
+      "solution": {
+        "task_id": "7743fbf1-7493-4abd-b54f-8a2dcf03b3c9",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=951",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "79784901-788b-4659-9da5-e7853fd624a1": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201112.7402756,
+      "solution": {
+        "task_id": "79784901-788b-4659-9da5-e7853fd624a1",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=584",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 1.5,
+            "timeout_seconds": 5.0
+          },
+          {
+            "type": "ScrollAction",
+            "selector": null,
+            "value": null,
+            "up": false,
+            "down": true,
+            "left": false,
+            "right": false
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "Your name",
+              "case_sensitive": false
+            },
+            "text": "Maria"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "you@example.com",
+              "case_sensitive": false
+            },
+            "text": "not"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "Not",
+              "case_sensitive": false
+            },
+            "text": "john@doe.com"
+          },
+          {
+            "type": "ClickAction",
+            "selector": {
+              "type": "xpathSelector",
+              "attribute": null,
+              "value": "//section[@id='contact']//button[@type='submit']",
+              "case_sensitive": false
+            },
+            "x": null,
+            "y": null
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "e050c721-5381-4290-a0f4-482847e7b98d": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201132.5825436,
+      "solution": {
+        "task_id": "e050c721-5381-4290-a0f4-482847e7b98d",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=738",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "4650a3f1-1acd-4e3f-af2c-3d191aac1a5c": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201137.1027963,
+      "solution": {
+        "task_id": "4650a3f1-1acd-4e3f-af2c-3d191aac1a5c",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=359",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "bde2a95a-4d66-4f76-a588-164979c90254": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201141.5034044,
+      "solution": {
+        "task_id": "bde2a95a-4d66-4f76-a588-164979c90254",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=203",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "6ddc80b3-94d9-4d96-9fe9-adde65d9938e": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201145.891698,
+      "solution": {
+        "task_id": "6ddc80b3-94d9-4d96-9fe9-adde65d9938e",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=652",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "968793c1-7822-4f46-af39-d235fd8828e8": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201150.2610385,
+      "solution": {
+        "task_id": "968793c1-7822-4f46-af39-d235fd8828e8",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=674",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "06f31dbb-e433-4ba1-acbe-77a52b0ce126": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201154.623914,
+      "solution": {
+        "task_id": "06f31dbb-e433-4ba1-acbe-77a52b0ce126",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=526",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "58a17aa5-4a51-4405-b4ec-407d7e048195": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201159.182891,
+      "solution": {
+        "task_id": "58a17aa5-4a51-4405-b4ec-407d7e048195",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=394",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "55b42e03-2c1a-4558-8c99-40177621705b": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201163.5743904,
+      "solution": {
+        "task_id": "55b42e03-2c1a-4558-8c99-40177621705b",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=560",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "6ac11920-94a8-4355-b9f5-6636428a83ed": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201168.0098774,
+      "solution": {
+        "task_id": "6ac11920-94a8-4355-b9f5-6636428a83ed",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=46",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "d4549e5e-0f1a-47f8-a261-eb02074bacdf": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201172.4473083,
+      "solution": {
+        "task_id": "d4549e5e-0f1a-47f8-a261-eb02074bacdf",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=142",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "75f19781-2fba-4955-be54-f700d6d81aa4": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201176.8012042,
+      "solution": {
+        "task_id": "75f19781-2fba-4955-be54-f700d6d81aa4",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=480",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "bb91a9fd-3655-4bac-8375-e1f65cbf3604": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201399.0653768,
+      "solution": {
+        "task_id": "bb91a9fd-3655-4bac-8375-e1f65cbf3604",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=472",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "62502769-1d05-4846-b31d-f6cdb9e5d80f": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201403.5069883,
+      "solution": {
+        "task_id": "62502769-1d05-4846-b31d-f6cdb9e5d80f",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=935",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "6e7e23c4-b68a-4fbe-9f22-47f9fc88f690": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201407.9477985,
+      "solution": {
+        "task_id": "6e7e23c4-b68a-4fbe-9f22-47f9fc88f690",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=458",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "2f62dd7d-988c-4d51-a5f7-9fa936a63e90": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201412.2687259,
+      "solution": {
+        "task_id": "2f62dd7d-988c-4d51-a5f7-9fa936a63e90",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=444",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 1.5,
+            "timeout_seconds": 5.0
+          },
+          {
+            "type": "ScrollAction",
+            "selector": null,
+            "value": null,
+            "up": false,
+            "down": true,
+            "left": false,
+            "right": false
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "Your name",
+              "case_sensitive": false
+            },
+            "text": "Agent Smith"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "you@example.com",
+              "case_sensitive": false
+            },
+            "text": "agent@example.com"
+          },
+          {
+            "type": "ClickAction",
+            "selector": {
+              "type": "xpathSelector",
+              "attribute": null,
+              "value": "//section[@id='contact']//button[@type='submit']",
+              "case_sensitive": false
+            },
+            "x": null,
+            "y": null
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "4cefff07-d345-4575-968c-0095b2cd30ce": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201421.9123065,
+      "solution": {
+        "task_id": "4cefff07-d345-4575-968c-0095b2cd30ce",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=274",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "5934c1b6-e301-4d79-95d7-681a0ee31edf": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201426.2103865,
+      "solution": {
+        "task_id": "5934c1b6-e301-4d79-95d7-681a0ee31edf",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=372",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "535163d6-c686-44c1-ae20-c0525cf546a9": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201430.533018,
+      "solution": {
+        "task_id": "535163d6-c686-44c1-ae20-c0525cf546a9",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=689",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 1.5,
+            "timeout_seconds": 5.0
+          },
+          {
+            "type": "ScrollAction",
+            "selector": null,
+            "value": null,
+            "up": false,
+            "down": true,
+            "left": false,
+            "right": false
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "Your name",
+              "case_sensitive": false
+            },
+            "text": "Agent Smith"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "you@example.com",
+              "case_sensitive": false
+            },
+            "text": "agent@example.com"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "What scene do you need?",
+              "case_sensitive": false
+            },
+            "text": "I"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "Not",
+              "case_sensitive": false
+            },
+            "text": "Complaint"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "That",
+              "case_sensitive": false
+            },
+            "text": "NOT"
+          },
+          {
+            "type": "ClickAction",
+            "selector": {
+              "type": "xpathSelector",
+              "attribute": null,
+              "value": "//section[@id='contact']//button[@type='submit']",
+              "case_sensitive": false
+            },
+            "x": null,
+            "y": null
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "2b6fc733-9eb3-424d-9fa7-2e737e5f30ae": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201460.673144,
+      "solution": {
+        "task_id": "2b6fc733-9eb3-424d-9fa7-2e737e5f30ae",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=301",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "a1ee59ef-4722-4a88-8808-f403e0e1aa0e": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201465.0164342,
+      "solution": {
+        "task_id": "a1ee59ef-4722-4a88-8808-f403e0e1aa0e",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=780",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "ad6d1fcc-1999-4910-8848-cbb9b8dc1607": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201469.4918532,
+      "solution": {
+        "task_id": "ad6d1fcc-1999-4910-8848-cbb9b8dc1607",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=838",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "6bce82d0-7a1a-4d78-a1fd-afe798004785": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201473.7383423,
+      "solution": {
+        "task_id": "6bce82d0-7a1a-4d78-a1fd-afe798004785",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=882",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "5d5a7397-a1a6-4407-bdf0-556e2c44f1dc": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201477.9854712,
+      "solution": {
+        "task_id": "5d5a7397-a1a6-4407-bdf0-556e2c44f1dc",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=745",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "7a70a424-7ba8-48ba-b106-6456f64029a7": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201482.2256813,
+      "solution": {
+        "task_id": "7a70a424-7ba8-48ba-b106-6456f64029a7",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=947",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "71a2c53f-148a-4e24-b78d-96cd9596859a": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201486.5229626,
+      "solution": {
+        "task_id": "71a2c53f-148a-4e24-b78d-96cd9596859a",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=729",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "5d8f5512-955b-4bd7-b95b-0df4f4d9473d": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201490.918705,
+      "solution": {
+        "task_id": "5d8f5512-955b-4bd7-b95b-0df4f4d9473d",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=287",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "a89f77e1-8979-429d-bb1c-28bf1f7d7264": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201495.281812,
+      "solution": {
+        "task_id": "a89f77e1-8979-429d-bb1c-28bf1f7d7264",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=92",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "a8946a7c-ac8f-4753-8767-592916595d0f": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201499.7584515,
+      "solution": {
+        "task_id": "a8946a7c-ac8f-4753-8767-592916595d0f",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=732",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "6e2b0761-8338-45b9-93fc-e0801ea55b0e": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768201504.1774924,
+      "solution": {
+        "task_id": "6e2b0761-8338-45b9-93fc-e0801ea55b0e",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=605",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "579cdba3-eb56-485d-9501-0b98eb12f14c": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202178.3239872,
+      "solution": {
+        "task_id": "579cdba3-eb56-485d-9501-0b98eb12f14c",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=292",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "f6d20596-984f-4e01-875f-b5d7b068409d": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202182.845694,
+      "solution": {
+        "task_id": "f6d20596-984f-4e01-875f-b5d7b068409d",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=952",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "c9ab51a0-3377-4608-b6f3-dd5a5278beb2": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202187.231463,
+      "solution": {
+        "task_id": "c9ab51a0-3377-4608-b6f3-dd5a5278beb2",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=489",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "26dae712-b88f-4f56-b99c-d4ad3fe61fea": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202191.696842,
+      "solution": {
+        "task_id": "26dae712-b88f-4f56-b99c-d4ad3fe61fea",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=194",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "ea1ed335-3efb-44e0-b80f-3501461aaa19": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202196.1642056,
+      "solution": {
+        "task_id": "ea1ed335-3efb-44e0-b80f-3501461aaa19",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=186",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "ce4f6aa0-e59b-404d-9fe8-4e7e6489b230": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202200.5641794,
+      "solution": {
+        "task_id": "ce4f6aa0-e59b-404d-9fe8-4e7e6489b230",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=868",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "8c56b91f-4c17-46d5-92e4-669276fabb1e": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202204.9490006,
+      "solution": {
+        "task_id": "8c56b91f-4c17-46d5-92e4-669276fabb1e",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=242",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 1.5,
+            "timeout_seconds": 5.0
+          },
+          {
+            "type": "ScrollAction",
+            "selector": null,
+            "value": null,
+            "up": false,
+            "down": true,
+            "left": false,
+            "right": false
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "Your name",
+              "case_sensitive": false
+            },
+            "text": "Robert"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "you@example.com",
+              "case_sensitive": false
+            },
+            "text": "agent@example.com"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "What do you need?",
+              "case_sensitive": false
+            },
+            "text": "Collaboration"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "That",
+              "case_sensitive": false
+            },
+            "text": "Could you help me with my account?"
+          },
+          {
+            "type": "ClickAction",
+            "selector": {
+              "type": "xpathSelector",
+              "attribute": null,
+              "value": "//section[@id='contact']//button[@type='submit']",
+              "case_sensitive": false
+            },
+            "x": null,
+            "y": null
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "d2e2650a-f721-461c-8a79-26057b713d0e": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202224.9708836,
+      "solution": {
+        "task_id": "d2e2650a-f721-461c-8a79-26057b713d0e",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=802",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "693ac10d-27c5-4d80-91e8-a9a24083e407": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202229.3732858,
+      "solution": {
+        "task_id": "693ac10d-27c5-4d80-91e8-a9a24083e407",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=609",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "20871d92-584a-46f7-b3b3-40f88b490a9b": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202233.7270057,
+      "solution": {
+        "task_id": "20871d92-584a-46f7-b3b3-40f88b490a9b",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=427",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "8ac8dfe5-46c9-4a06-894d-811c5ef3cf9b": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202238.0424745,
+      "solution": {
+        "task_id": "8ac8dfe5-46c9-4a06-894d-811c5ef3cf9b",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=131",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "421d9c8f-6ce8-420f-81dc-afb23ef5fc00": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202242.367977,
+      "solution": {
+        "task_id": "421d9c8f-6ce8-420f-81dc-afb23ef5fc00",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=688",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "649b1a57-48cf-440f-b052-0b4addeff62c": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202246.7214239,
+      "solution": {
+        "task_id": "649b1a57-48cf-440f-b052-0b4addeff62c",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=943",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "786d8cec-09b0-4c3d-b093-0016c7f59261": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202251.0702069,
+      "solution": {
+        "task_id": "786d8cec-09b0-4c3d-b093-0016c7f59261",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=835",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "aed7d2da-54b2-4779-8f5f-e5b101845df9": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202255.399592,
+      "solution": {
+        "task_id": "aed7d2da-54b2-4779-8f5f-e5b101845df9",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=860",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "f8dd7f05-7f29-412e-bc5c-c39319d109ac": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202259.7924743,
+      "solution": {
+        "task_id": "f8dd7f05-7f29-412e-bc5c-c39319d109ac",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=179",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "682dfae8-c845-4829-b0c9-fd3d748dbdb7": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202264.075092,
+      "solution": {
+        "task_id": "682dfae8-c845-4829-b0c9-fd3d748dbdb7",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=59",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "323b0f9b-2c0e-41a7-ac23-7df5431aca98": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768202268.4208925,
+      "solution": {
+        "task_id": "323b0f9b-2c0e-41a7-ac23-7df5431aca98",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=851",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "b0069a0b-5a11-4ea3-bf0b-811f860c8872": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203136.945693,
+      "solution": {
+        "task_id": "b0069a0b-5a11-4ea3-bf0b-811f860c8872",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=372",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "5761bdc4-51fe-4ee3-86bb-801fc38ba029": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203141.5434663,
+      "solution": {
+        "task_id": "5761bdc4-51fe-4ee3-86bb-801fc38ba029",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=163",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "ca89e2ca-d95d-46ee-81ea-0f1d6514489f": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203145.9254572,
+      "solution": {
+        "task_id": "ca89e2ca-d95d-46ee-81ea-0f1d6514489f",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=756",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "4c0c522d-2b3c-4696-a31c-ba98e756b1f3": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203150.3730114,
+      "solution": {
+        "task_id": "4c0c522d-2b3c-4696-a31c-ba98e756b1f3",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=703",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "a94a3682-7648-4444-b339-52abd118d818": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203154.702997,
+      "solution": {
+        "task_id": "a94a3682-7648-4444-b339-52abd118d818",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=420",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "7949d62d-cfcf-4998-8c9e-da1df900371e": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203159.0559814,
+      "solution": {
+        "task_id": "7949d62d-cfcf-4998-8c9e-da1df900371e",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=156",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "f8355860-4c59-4613-a573-beba61901ceb": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203163.3972418,
+      "solution": {
+        "task_id": "f8355860-4c59-4613-a573-beba61901ceb",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=235",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 1.5,
+            "timeout_seconds": 5.0
+          },
+          {
+            "type": "ScrollAction",
+            "selector": null,
+            "value": null,
+            "up": false,
+            "down": true,
+            "left": false,
+            "right": false
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "Your name",
+              "case_sensitive": false
+            },
+            "text": "Agent Smith"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "you@example.com",
+              "case_sensitive": false
+            },
+            "text": "agent@example.com"
+          },
+          {
+            "type": "TypeAction",
+            "selector": {
+              "type": "attributeValueSelector",
+              "attribute": "placeholder",
+              "value": "That",
+              "case_sensitive": false
+            },
+            "text": "Feedback"
+          },
+          {
+            "type": "ClickAction",
+            "selector": {
+              "type": "xpathSelector",
+              "attribute": null,
+              "value": "//section[@id='contact']//button[@type='submit']",
+              "case_sensitive": false
+            },
+            "x": null,
+            "y": null
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "16b33142-2c28-436b-8202-bed915dfbe72": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203183.1646044,
+      "solution": {
+        "task_id": "16b33142-2c28-436b-8202-bed915dfbe72",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=542",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "faeabff1-6a9c-4bec-8dd7-f627281c8d36": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203187.5614092,
+      "solution": {
+        "task_id": "faeabff1-6a9c-4bec-8dd7-f627281c8d36",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=130",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "acdb9535-4c84-4349-9892-62dc6d5fcb94": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203191.9299324,
+      "solution": {
+        "task_id": "acdb9535-4c84-4349-9892-62dc6d5fcb94",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=61",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "43d2884a-34d8-447d-b6de-e5d25687d4bc": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203196.3128402,
+      "solution": {
+        "task_id": "43d2884a-34d8-447d-b6de-e5d25687d4bc",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=517",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "3b040f0b-f17a-4728-bc09-519e872e5fd2": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203200.6529398,
+      "solution": {
+        "task_id": "3b040f0b-f17a-4728-bc09-519e872e5fd2",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=66",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "0b5b2d86-2672-4109-9cbd-fa2c72f86155": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203204.9477696,
+      "solution": {
+        "task_id": "0b5b2d86-2672-4109-9cbd-fa2c72f86155",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=157",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "2191326c-4cc5-47ba-81a5-f44f831f8498": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203209.3616645,
+      "solution": {
+        "task_id": "2191326c-4cc5-47ba-81a5-f44f831f8498",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=925",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "7f48bc5c-9555-406a-8030-da5e9691a5c3": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203214.2095158,
+      "solution": {
+        "task_id": "7f48bc5c-9555-406a-8030-da5e9691a5c3",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=649",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "4eb494a5-6710-4e94-9ed0-4cb8325e2201": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203218.560346,
+      "solution": {
+        "task_id": "4eb494a5-6710-4e94-9ed0-4cb8325e2201",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=875",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "da93d4cc-9ed1-4b31-8690-bf2f39d07df3": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203222.8800428,
+      "solution": {
+        "task_id": "da93d4cc-9ed1-4b31-8690-bf2f39d07df3",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=997",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  },
+  "f26bf7d8-f1ce-4732-bd52-8bc399e911a9": {
+    "technical_test_agent": {
+      "agent_id": "technical_test_agent",
+      "agent_name": "Technical Test Agent (Contact Form)",
+      "timestamp": 1768203227.1880183,
+      "solution": {
+        "task_id": "f26bf7d8-f1ce-4732-bd52-8bc399e911a9",
+        "actions": [
+          {
+            "type": "NavigateAction",
+            "selector": null,
+            "url": "http://localhost:8000/?seed=840",
+            "go_back": false,
+            "go_forward": false
+          },
+          {
+            "type": "WaitAction",
+            "selector": null,
+            "time_seconds": 2.0,
+            "timeout_seconds": 5.0
+          }
+        ],
+        "web_agent_id": "technical_test_agent",
+        "recording": null
+      }
+    }
+  }
+}

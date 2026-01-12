@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-01-12T08:17:52.725607",
+  "total_execution_time": 0.0,
+  "agents": {
+    "Technical Test Agent (Contact Form)": {
+      "agent-id": "technical_test_agent",
+      "score_statistics": {
+        "count": 18,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "stdev": 0.0
+      },
+      "avg_solution_time": 0.0024511019388834634,
+      "avg_evaluation_time": 0.0,
+      "tasks": {
+        "579cdba3-eb56-485d-9501-0b98eb12f14c": {
+          "use_case": "FILM_DETAIL",
+          "prompt": "Navigate to the details page for a movie where the director does NOT contain 'dvt' and the name contains 'even'",
+          "score": 0.0,
+          "solution_time": 0.0032901763916015625,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "f6d20596-984f-4e01-875f-b5d7b068409d": {
+          "use_case": "LOGIN",
+          "prompt": "First, authenticate with username '<web_agent_id>' and password 'password123' to log in successfully.",
+          "score": 0.0,
+          "solution_time": 0.0023343563079833984,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "c9ab51a0-3377-4608-b6f3-dd5a5278beb2": {
+          "use_case": "DELETE_FILM",
+          "prompt": "Delete a film with a rating equal to '4.8' and a duration equal to '146' minutes.",
+          "score": 0.0,
+          "solution_time": 0.002931833267211914,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "26dae712-b88f-4f56-b99c-d4ad3fe61fea": {
+          "use_case": "LOGOUT",
+          "prompt": "First, authenticate with username '<web_agent_id>' and password 'password123' before logging out of the platform.",
+          "score": 0.0,
+          "solution_time": 0.0026590824127197266,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "ea1ed335-3efb-44e0-b80f-3501461aaa19": {
+          "use_case": "FILTER_FILM",
+          "prompt": "Filter films in the genre of 'Animation' that were released in the year '2011'.",
+          "score": 0.0,
+          "solution_time": 0.0027163028717041016,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "ce4f6aa0-e59b-404d-9fe8-4e7e6489b230": {
+          "use_case": "SEARCH_FILM",
+          "prompt": "Search for the movie that is NOT 'Ratatouille'",
+          "score": 0.0,
+          "solution_time": 0.002134561538696289,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "8c56b91f-4c17-46d5-92e4-669276fabb1e": {
+          "use_case": "CONTACT",
+          "prompt": "Fill out the contact form with a name equal to 'Robert', a subject equal to 'Collaboration', a message that contains 'Could you help me with my account?', and an email that contains 'jane@doe.com'.",
+          "score": 0.0,
+          "solution_time": 0.0026733875274658203,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "d2e2650a-f721-461c-8a79-26057b713d0e": {
+          "use_case": "REGISTRATION",
+          "prompt": "Please register using username 'newuser<web_agent_id>', email 'newuser<web_agent_id>@gmail.com' and password 'password123'.",
+          "score": 0.0,
+          "solution_time": 0.0022568702697753906,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "693ac10d-27c5-4d80-91e8-a9a24083e407": {
+          "use_case": "ADD_COMMENT",
+          "prompt": "Add a comment to a movie whose name contains 'Oldboy' with a comment whose content equals 'sets a new standard' and the commenter name contains 'David'.",
+          "score": 0.0,
+          "solution_time": 0.002488851547241211,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "20871d92-584a-46f7-b3b3-40f88b490a9b": {
+          "use_case": "EDIT_FILM",
+          "prompt": "Modify the film where the name equals 'The Godfather' and the year equals '2016'.",
+          "score": 0.0,
+          "solution_time": 0.0023193359375,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "8ac8dfe5-46c9-4a06-894d-811c5ef3cf9b": {
+          "use_case": "ADD_FILM",
+          "prompt": "Add a film where the director does NOT contain 'silver', the rating is greater than or equal to 4.2, and the cast contains 'sage'.",
+          "score": 0.0,
+          "solution_time": 0.0020956993103027344,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "421d9c8f-6ce8-420f-81dc-afb23ef5fc00": {
+          "use_case": "EDIT_USER",
+          "prompt": "Login for the following username:user<web_agent_id> and password:password123. Update your profile to change your last name to 'car' and ensure your website contains 'https://filmjournals.example.io'.",
+          "score": 0.0,
+          "solution_time": 0.0023965835571289062,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "649b1a57-48cf-440f-b052-0b4addeff62c": {
+          "use_case": "ADD_TO_WATCHLIST",
+          "prompt": "Add to wishlist a movie with a duration of 151 minutes or less",
+          "score": 0.0,
+          "solution_time": 0.0021772384643554688,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "786d8cec-09b0-4c3d-b093-0016c7f59261": {
+          "use_case": "ADD_PRODUCT_TO_WATCHLIST",
+          "prompt": "Add to wishlist a film whose genres are NOT in the list ['Western', 'Drama'], with a duration of 107 minutes or more, and a rating of 4.8 or less",
+          "score": 0.0,
+          "solution_time": 0.002269268035888672,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "aed7d2da-54b2-4779-8f5f-e5b101845df9": {
+          "use_case": "REMOVE_FROM_WATCHLIST",
+          "prompt": "Retrieve details of a movie with a duration greater than 81 minutes, where the name equals 'Inside Out', and the rating is greater than 4.6",
+          "score": 0.0,
+          "solution_time": 0.0020885467529296875,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "f8dd7f05-7f29-412e-bc5c-c39319d109ac": {
+          "use_case": "RATE_FILM",
+          "prompt": "Retrieve details of a film with a rating equal to '4.8' that was released after '2009'",
+          "score": 0.0,
+          "solution_time": 0.0021436214447021484,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "682dfae8-c845-4829-b0c9-fd3d748dbdb7": {
+          "use_case": "SHARE_MOVIE",
+          "prompt": "Share details for a movie where the genres contain 'Comedy'",
+          "score": 0.0,
+          "solution_time": 0.002631664276123047,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "323b0f9b-2c0e-41a7-ac23-7df5431aca98": {
+          "use_case": "WATCH_TRAILER",
+          "prompt": "Play the trailer of a movie with a rating of 4.6 or lower",
+          "score": 0.0,
+          "solution_time": 0.0025124549865722656,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        }
+      }
+    }
+  }
+}

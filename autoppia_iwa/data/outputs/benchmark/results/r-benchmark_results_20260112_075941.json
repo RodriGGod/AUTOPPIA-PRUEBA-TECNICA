@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-01-12T07:59:41.152630",
+  "total_execution_time": 0.0,
+  "agents": {
+    "Technical Test Agent (Contact Form)": {
+      "agent-id": "technical_test_agent",
+      "score_statistics": {
+        "count": 18,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "stdev": 0.0
+      },
+      "avg_solution_time": 0.0026933749516805014,
+      "avg_evaluation_time": 0.0,
+      "tasks": {
+        "d9c49674-d2e6-4909-9bd6-a04b18756c65": {
+          "use_case": "FILM_DETAIL",
+          "prompt": "Show details for a movie where the name contains 'God' and the year is greater than '1971'",
+          "score": 0.0,
+          "solution_time": 0.0038843154907226562,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "79070275-f6da-41d1-a25d-cc6359577892": {
+          "use_case": "LOGIN",
+          "prompt": "First, authenticate with username '<web_agent_id>' and password 'password123' to log in successfully.",
+          "score": 0.0,
+          "solution_time": 0.0021338462829589844,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "ff27b02e-917e-4504-96fd-fcc4bf1a4ada": {
+          "use_case": "DELETE_FILM",
+          "prompt": "Remove a film that does not contain the genre 'History'.",
+          "score": 0.0,
+          "solution_time": 0.002424955368041992,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "d68b43a8-a5b9-4333-9261-eb774b66e3bb": {
+          "use_case": "LOGOUT",
+          "prompt": "First, authenticate with username '<web_agent_id>' and password 'password123' before logging out of the platform.",
+          "score": 0.0,
+          "solution_time": 0.0024645328521728516,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "77e20ea9-e8a7-4c4b-8b95-5da5244e36db": {
+          "use_case": "FILTER_FILM",
+          "prompt": "Filter films in the Horror genre that were released in the year '2003'.",
+          "score": 0.0,
+          "solution_time": 0.004204988479614258,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "7743fbf1-7493-4abd-b54f-8a2dcf03b3c9": {
+          "use_case": "SEARCH_FILM",
+          "prompt": "Search for the movie NOT 'Pulp Fiction' in the database",
+          "score": 0.0,
+          "solution_time": 0.002478361129760742,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "79784901-788b-4659-9da5-e7853fd624a1": {
+          "use_case": "CONTACT",
+          "prompt": "Go to the contact page and submit a form where the name equals 'Maria' and the email is not equal to 'john@doe.com'.",
+          "score": 0.0,
+          "solution_time": 0.002986431121826172,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "e050c721-5381-4290-a0f4-482847e7b98d": {
+          "use_case": "REGISTRATION",
+          "prompt": "Please register using username 'newuser<web_agent_id>', email 'newuser<web_agent_id>@gmail.com', and password 'password123'.",
+          "score": 0.0,
+          "solution_time": 0.0024526119232177734,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "4650a3f1-1acd-4e3f-af2c-3d191aac1a5c": {
+          "use_case": "ADD_COMMENT",
+          "prompt": "Add a comment to a movie whose name contains 'Ratatouille' with a comment whose content does NOT contain the word 'masterpiece'.",
+          "score": 0.0,
+          "solution_time": 0.0030701160430908203,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "bde2a95a-4d66-4f76-a588-164979c90254": {
+          "use_case": "EDIT_FILM",
+          "prompt": "Edit a film where the name equals 'The Lord of the Rings: The Fellowship of the Ring' and the genres equals 'Sci-Fi'.",
+          "score": 0.0,
+          "solution_time": 0.00241851806640625,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "6ddc80b3-94d9-4d96-9fe9-adde65d9938e": {
+          "use_case": "ADD_FILM",
+          "prompt": "Add a film where the cast equals 'green'.",
+          "score": 0.0,
+          "solution_time": 0.002249479293823242,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "968793c1-7822-4f46-af39-d235fd8828e8": {
+          "use_case": "EDIT_USER",
+          "prompt": "Login for the following username:user<web_agent_id> and password:password123. Modify your profile to ensure that your last name is equal to 'x', your location is NOT equal to 'shadow', and your website does NOT contain 'https://moviereviews.example.net'.",
+          "score": 0.0,
+          "solution_time": 0.002279520034790039,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "06f31dbb-e433-4ba1-acbe-77a52b0ce126": {
+          "use_case": "ADD_TO_WATCHLIST",
+          "prompt": "Add to wishlist a movie NOT directed by 'seg' that was released AFTER 1993",
+          "score": 0.0,
+          "solution_time": 0.0026285648345947266,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "58a17aa5-4a51-4405-b4ec-407d7e048195": {
+          "use_case": "ADD_PRODUCT_TO_WATCHLIST",
+          "prompt": "Add to wishlist a movie with a rating greater than 4.5 that was directed by someone whose name does NOT contain 'hst' and was released in the year equal to '1994'",
+          "score": 0.0,
+          "solution_time": 0.003061056137084961,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "55b42e03-2c1a-4558-8c99-40177621705b": {
+          "use_case": "REMOVE_FROM_WATCHLIST",
+          "prompt": "Retrieve details of a movie where the name CONTAINS 'te'",
+          "score": 0.0,
+          "solution_time": 0.002246379852294922,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "6ac11920-94a8-4355-b9f5-6636428a83ed": {
+          "use_case": "RATE_FILM",
+          "prompt": "Retrieve details of a film with a rating of 4.7 or lower that was released after the year 1999",
+          "score": 0.0,
+          "solution_time": 0.0021402835845947266,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "d4549e5e-0f1a-47f8-a261-eb02074bacdf": {
+          "use_case": "SHARE_MOVIE",
+          "prompt": "Share details for a movie with a rating greater than '4.5' and where the director does not contain 'nwc'",
+          "score": 0.0,
+          "solution_time": 0.0028727054595947266,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        },
+        "75f19781-2fba-4955-be54-f700d6d81aa4": {
+          "use_case": "WATCH_TRAILER",
+          "prompt": "Watch the trailer for a movie whose name does NOT contain 'cuj'",
+          "score": 0.0,
+          "solution_time": 0.0024840831756591797,
+          "evaluation_time": 0,
+          "has_cached_solution": false
+        }
+      }
+    }
+  }
+}
