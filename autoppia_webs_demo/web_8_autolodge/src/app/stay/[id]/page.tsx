@@ -289,7 +289,7 @@ function PropertyDetailContent() {
   };
 
   return (
-    <div className="relative flex flex-row gap-10 w-full max-w-6xl mx-auto mt-7">
+    <div className="relative flex flex-col md:flex-row gap-10 w-full max-w-6xl mx-auto mt-7 px-4 md:px-0">
       {toastMessage && (
         <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded text-sm shadow-lg z-50">
           {toastMessage}
@@ -372,7 +372,7 @@ function PropertyDetailContent() {
         </div>
       )}
 
-      <div className="flex-1 min-w-0 pr-6">
+      <div className="flex-1 min-w-0 md:pr-6">
         <h1 className="text-2xl font-bold mb-2 leading-7">
           Entire Rental Unit in {prop.location}
         </h1>
@@ -382,7 +382,7 @@ function PropertyDetailContent() {
           <span>· {prop.beds} bed</span>
           <span>· {prop.baths} bath</span>
         </div>
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-3 mb-3 flex-wrap">
           <span className="text-lg font-semibold flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -509,7 +509,7 @@ function PropertyDetailContent() {
             ))}
         </div>
 
-        <div className="mt-8 border rounded-2xl p-4 bg-white shadow-sm">
+        <div className="mt-8 border rounded-2xl p-4 bg-white shadow-sm overflow-hidden">
           <h2 className="font-semibold text-lg mb-4">Guest reviews</h2>
           <div className="flex flex-col gap-4 mb-5">
             {userReviews.map((review) => (
@@ -517,7 +517,7 @@ function PropertyDetailContent() {
                 key={review.id}
                 className="border rounded-xl p-3 bg-neutral-50 flex flex-col gap-1"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <span className="font-semibold text-neutral-800">
                     {review.name}
                   </span>
@@ -576,9 +576,9 @@ function PropertyDetailContent() {
               setReviewForm({ name: "", rating: 5, comment: "" });
             }}
           >
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               <input
-                className="flex-1 border rounded-lg px-3 py-2 text-sm"
+                className="flex-1 border rounded-lg px-3 py-2 text-sm min-w-[200px]"
                 placeholder="Your name (optional)"
                 value={reviewForm.name}
                 onChange={(event) =>
@@ -621,23 +621,26 @@ function PropertyDetailContent() {
           </form>
         </div>
 
-        <div className="mt-8 border rounded-2xl p-4 bg-white shadow-sm">
+        <div className="mt-8 border rounded-2xl p-4 bg-white shadow-sm w-full overflow-hidden">
           <h2 className="font-semibold text-lg mb-3">
             {getText("select_dates", "Select your stay")}
           </h2>
-          <Calendar
-            numberOfMonths={2}
-            mode="range"
-            defaultMonth={selectedRange?.from ?? stayFrom}
-            selected={selectedRange}
-            onSelect={handleCalendarSelect}
-            disabled={(date) => !isWithinAvailable(date)}
-            initialFocus
-          />
+          <div className="w-full flex justify-center">
+            <Calendar
+              numberOfMonths={1}
+              mode="range"
+              defaultMonth={selectedRange?.from ?? stayFrom}
+              selected={selectedRange}
+              onSelect={handleCalendarSelect}
+              disabled={(date) => !isWithinAvailable(date)}
+              initialFocus
+              className="p-0 border-none shadow-none"
+            />
+          </div>
         </div>
       </div>
 
-      <div className="w-[350px] min-w-[300px] bg-white shadow-md rounded-2xl border flex flex-col p-6 sticky top-8 h-fit">
+      <div className="w-full md:w-[350px] md:min-w-[300px] bg-white shadow-md rounded-2xl border flex flex-col p-6 sticky top-8 h-fit">
         <div id="pricePerNight" className="text-2xl font-bold mb-1">
           ${prop.price.toFixed(2)}{" "}
           <span className="text-base text-neutral-600 font-medium">

@@ -35,7 +35,7 @@ export default function RootLayout({
         <SeedProvider>
           <Suspense fallback={<div className="h-16" />}>
             <Header />
-            <main className="flex justify-center w-full mt-3 px-2">
+            <main className="flex justify-center w-full mt-3 px-4 md:px-6">
               <div className="w-full max-w-7xl">{children}</div>
             </main>
           </Suspense>

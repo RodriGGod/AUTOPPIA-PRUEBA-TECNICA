@@ -14,8 +14,8 @@ export default function Header() {
   ];
   return (
     <header className="w-full flex flex-col items-center border-b border-neutral-200 bg-white sticky top-0 z-20">
-      <nav className="w-full max-w-7xl flex items-center justify-between py-2 px-3 md:px-0">
-        <div className="flex items-center gap-2 min-w-[130px]">
+      <nav className="w-full max-w-7xl flex flex-col md:flex-row items-center justify-between py-2 px-3 md:px-0 gap-3 md:gap-0">
+        <div className="flex items-center gap-2 md:min-w-[130px]">
           <SeedLink id={getId("logo_link")} href="/" className="flex items-center gap-1 select-none">
             <span className="font-logo font-bold text-2xl text-[#18181b] tracking-tight">
               Auto
@@ -28,7 +28,7 @@ export default function Header() {
             </span>
           </SeedLink>
         </div>
-        <div className="flex-1 flex justify-center">
+        <div className="flex-1 flex flex-wrap justify-center gap-2 md:gap-0">
           {navItems.map((item) => {
             const isActive = pathname === item.href || (item.href === '/' && pathname === '/');
             return (
@@ -36,7 +36,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 id={item.id}
-                className={`mx-2 px-3 py-2 font-medium text-lg ${
+                className={`mx-1 md:mx-2 px-2 md:px-3 py-2 font-medium text-base md:text-lg ${
                   isActive ? "text-neutral-800" : "text-neutral-500"
                 }`}
                 style={
@@ -50,7 +50,7 @@ export default function Header() {
             );
           })}
         </div>
-        <div className="min-w-[130px] flex justify-end" />
+        <div className="hidden md:flex min-w-[130px] justify-end" />
       </nav>
     </header>
   );

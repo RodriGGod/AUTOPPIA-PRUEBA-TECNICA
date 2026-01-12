@@ -296,7 +296,7 @@ function HomeContent() {
     <WherePopover searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
       <div
         id={getId("search_field")}
-        className="flex-[2] flex flex-col px-3 py-2 rounded-[24px] cursor-pointer hover:bg-neutral-100 transition-all relative"
+        className="w-full lg:flex-[2] flex flex-col px-3 py-2 rounded-[24px] cursor-pointer hover:bg-neutral-100 transition-all relative"
       >
         <span className="text-xs font-semibold text-neutral-500 pb-0.5">
           {getText("where_label", "Where")}
@@ -394,7 +394,7 @@ function HomeContent() {
     <GuestSelectorPopover counts={guests} setCounts={setGuests}>
       <div
         id={getId("guests_field")}
-        className="flex flex-col px-3 py-2 rounded-[24px] cursor-pointer hover:bg-neutral-100 transition-all relative min-w-[180px]"
+        className="w-full lg:w-auto lg:min-w-[180px] flex flex-col px-3 py-2 rounded-[24px] cursor-pointer hover:bg-neutral-100 transition-all relative"
       >
         <span className="text-xs font-semibold text-neutral-500 pb-0.5">
           {getText("who", "Who")}
@@ -425,7 +425,7 @@ function HomeContent() {
   const reserveNode = (
     <button
       id={getId("search_button")}
-      className={`${searchButtonVariant} ml-3 px-4 py-2 rounded-full bg-[#616882] text-white font-semibold text-lg flex items-center shadow-md border border-neutral-200 hover:bg-[#9ba6ce] focus:outline-none transition-all`}
+      className={`${searchButtonVariant} mt-2 lg:mt-0 lg:ml-3 px-6 py-3 lg:px-4 lg:py-2 rounded-full bg-[#616882] text-white font-semibold text-lg flex items-center justify-center shadow-md border border-neutral-200 hover:bg-[#9ba6ce] focus:outline-none transition-all w-full lg:w-auto`}
       onClick={handleSearch}
     >
       <svg
@@ -448,7 +448,7 @@ function HomeContent() {
   const eventComponents: Record<string, JSX.Element> = {
     search: searchFieldNode,
     dates: (
-      <div className="flex flex-1 gap-2 min-w-[260px]">{checkInNode}{checkOutNode}</div>
+      <div className="flex flex-1 gap-2 w-full lg:w-auto lg:min-w-[260px]">{checkInNode}{checkOutNode}</div>
     ),
     guests: guestsNode,
     reserve: reserveNode,
@@ -522,7 +522,7 @@ function HomeContent() {
     <div className="flex flex-col w-full items-center mt-4 pb-12">
       <SearchWrapperTag className={`w-full flex justify-center ${searchWrapperClass}`}>
         <EventWrapperTag
-          className={`rounded-[32px] shadow-md bg-white border flex flex-wrap gap-3 items-center px-2 py-1 min-w-[900px] max-w-3xl ${eventWrapperClass} !flex-row !items-center`}
+          className={`rounded-[32px] shadow-md bg-white border flex flex-col lg:flex-row gap-3 items-stretch lg:items-center px-4 py-4 lg:px-2 lg:py-1 w-full max-w-5xl ${eventWrapperClass}`}
         >
           {renderedEventComponents}
         </EventWrapperTag>
@@ -535,7 +535,7 @@ function HomeContent() {
       />
 
       <div className="w-full mt-6">
-        <div className="w-full bg-white border border-neutral-200 shadow-sm rounded-full px-4 py-3 flex flex-wrap items-center gap-4">
+        <div className="w-full bg-white border border-neutral-200 shadow-sm rounded-2xl px-4 py-3 flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-3">
             <span className="text-xs font-semibold text-neutral-500 uppercase tracking-wide">
               Rating
