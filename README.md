@@ -18,6 +18,14 @@ git clone https://github.com/RodriGGod/AUTOPPIA-PRUEBA-TECNICA.git
 cd AUTOPPIA-PRUEBA-TECNICA
 ```
 
+## ⚙️ Prerequisites
+
+Before running the tests, ensure you have the following:
+
+- **Docker Desktop**: Required for Parts 2 and 3. **Docker Desktop must be running** before executing any Docker-related commands.
+- **Python 3.8+**: For the agent and benchmark scripts.
+- **Node.js and npm**: For Part 1 (React web application).
+
 ---
 
 ## 🛠️ Running the Tests
@@ -48,23 +56,70 @@ npm run dev
 ### 🔹 [Part 2: Agent Implementation](Docs/README_PART2.md)
 Creation and visualization of the "Simple Agent" solving the contact form.
 
-**Test Commands:**
+> ⚠️ **Important:** Make sure **Docker Desktop is running** before executing the testing steps.
+
+**Step 1: Prepare the Agent Environment (First time only)**
 ```bash
-# 1. Prepare Agent Environment (Only the first time)
+# 1. Navigate to the agent directory
+cd simple_agent
+
+# 2. Create a virtual environment
 python -m venv venv
+
+# 3. Activate the virtual environment
 # Windows:
 .\venv\Scripts\activate
 # Mac/Linux:
 # source venv/bin/activate
+
+# 4. Install dependencies
 pip install flask
-
-# 2. Start the agent server (in a new terminal)
-python simple_agent/agent_server.py
-
-# 2. Run the visualization (requires Docker)
-cd autoppia_iwa
-python -m autoppia_iwa.entrypoints.technical_test_agent.run_visualization
 ```
+
+**Step 2: Start Required Services (2 terminals)**
+```bash
+# Terminal 1: Start the Web App (from project root)
+cd autoppia_webs_demo
+./scripts/setup.sh --demo=autocinema --web_port=8000
+
+# Terminal 2: Start the Agent Server (from project root)
+python simple_agent/agent_server.py
+```
+
+**Step 3: Test the Agent in Docker Environment**
+```bash
+# Navigate back to project root (if you're in simple_agent directory)
+cd ..
+
+# Terminal 3: Launch Docker container (from project root)
+docker run --rm -it --network host -v ${PWD}:/app -w /app python:3.11 bash
+
+# Inside Docker, run these commands:
+# A. Create isolated environment
+python -m venv /tmp/venv_clean
+source /tmp/venv_clean/bin/activate
+
+# B. Install Python dependencies
+pip install --upgrade pip
+pip install -r autoppia_iwa/requirements.txt
+pip install -e autoppia_iwa/
+
+# C. Install Playwright & browsers
+playwright install chromium
+
+# D. Install system dependencies
+apt-get update && apt-get install -y libnss3 libnspr4 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libdrm2 libxkbcommon0 libasound2
+
+# E. Run the contact task test
+AGENT_HOST=host.docker.internal python autoppia_iwa/autoppia_iwa/entrypoints/technical_test_agent/test_contact_task.py
+```
+
+**Expected Result:**
+```
+Technical Test Agent (Contact Form) | 100.00% (1/1) | Passed
+```
+
+
 > [See complete Part 2 documentation](Docs/README_PART2.md)
 
 ### 🔹 [Part 3: Full Benchmark](Docs/README_PART3.md)
