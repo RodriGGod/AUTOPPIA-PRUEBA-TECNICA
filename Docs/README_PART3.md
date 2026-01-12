@@ -7,6 +7,33 @@ For the benchmark to generate dynamic tasks (like "Register with user X"), it ne
 *   **Action:** Configure the `OPENAI_API_KEY` variable in the `.env` file within `autoppia_iwa`.
 *   **Why:** Without this, the benchmark cannot "invent" the tests.
 
+### Configure Environment Variables
+Before running the benchmark, you need to configure the following environment variables in `autoppia_iwa/.env`:
+
+#### Required Variables:
+```bash
+# 1. Demo Web Configuration
+DEMO_WEBS_STARTING_PORT=8000  # Must match the port where autocinema is running
+
+# 2. Agent Configuration
+AGENT_HOST=localhost          # Or host.docker.internal if agent runs on host
+AGENT_PORT=7000              # Port where your agent_server.py is listening
+```
+
+#### PowerShell Command (Windows):
+```powershell
+# Set the port before running the benchmark
+$env:DEMO_WEBS_STARTING_PORT=8000; python -m autoppia_iwa.entrypoints.technical_test_agent.run_benchmark
+```
+
+#### Bash Command (Linux/Mac):
+```bash
+# Set the port before running the benchmark
+DEMO_WEBS_STARTING_PORT=8000 python -m autoppia_iwa.entrypoints.technical_test_agent.run_benchmark
+```
+
+> 💡 **Important:** The `DEMO_WEBS_STARTING_PORT` must match the port specified in the `setup.sh` script (`--web_port=8000`).
+
 ## 2. How Does the Benchmark Work? (Simple Explanation)
 Imagine the Benchmark is an **Examiner** and our Agent is a **Student**.
 

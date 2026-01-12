@@ -70,6 +70,12 @@ python -m autoppia_iwa.entrypoints.technical_test_agent.run_visualization
 ### 🔹 [Parte 3: Benchmark Completo](Docs/README_PART3.md)
 Evaluación del rendimiento del agente frente a múltiples casos de uso.
 
+> ⚙️ **Nota:** Antes de ejecutar el benchmark, asegúrate de configurar las variables de entorno necesarias en `autoppia_iwa/.env`:
+> - **LLM API Key**: `OPENAI_API_KEY` o `CHUTES_API_KEY` (necesario para generar tareas dinámicas)
+> - **Puertos**: `DEMO_WEBS_STARTING_PORT=8000` y `AGENT_PORT=7000`
+> 
+> Ver detalles completos en [README_PART3.md](Docs/README_PART3.md).
+
 **Comandos de Benchmark:**
 ```bash
 # Ejecutar benchmark estableciendo el puerto de inicio
