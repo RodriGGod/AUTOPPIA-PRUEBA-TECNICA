@@ -76,13 +76,13 @@ def generate_form_actions(url, fields):
     """Genera una secuencia de acciones robusta para completar formularios."""
     actions = []
     
-    # 1. Navegación inicial conm retry logic implícito
+    # 1. Navegación inicial
     actions.append({"type": "NavigateAction", "url": url})
-    actions.append({"type": "WaitAction", "time_seconds": 4.0})
+    # Reducimos espera inicial al mínimo necesario para carga de DOM
+    actions.append({"type": "WaitAction", "time_seconds": 1.5})
     
-    # 2. Asegurar visibilidad (Scroll)
+    # 2. Asegurar visibilidad (Scroll) - Eliminamos espera posterior innecesaria
     actions.append({"type": "ScrollAction", "down": True, "value": None})
-    actions.append({"type": "WaitAction", "time_seconds": 1.0})
     
     # 3. Campos identidad (Defaults si no están en el prompt)
     identity_fields = {
@@ -102,21 +102,19 @@ def generate_form_actions(url, fields):
         value = final_fields[key]
         selector = get_field_selector(key)
         
-        # Acción compuesta para robustez (Click + Type)
-        actions.append({"type": "ClickAction", "selector": selector})
-        # Pequeña pausa para UI response
-        actions.append({"type": "WaitAction", "time_seconds": 0.5}) 
+        # Eliminamos ClickAction explícito y esperas intermedias
+        # TypeAction debería manejar el foco automáticamente en la mayoría de runners
         actions.append({"type": "TypeAction", "text": value, "selector": selector})
-        actions.append({"type": "WaitAction", "time_seconds": 0.5})
 
-    # 4. Submit (Selector específico para AutoCinema para asegurar éxito)
+    # 4. Submit
     submit_selector = {
         "type": "xpathSelector",
         "value": "//section[@id='contact']//button[@type='submit']"
     }
     
     actions.append({"type": "ClickAction", "selector": submit_selector})
-    actions.append({"type": "WaitAction", "time_seconds": 5.0})
+    # Espera suficiente para que el evento se registre y la prueba verifique, pero no excesiva
+    actions.append({"type": "WaitAction", "time_seconds": 2.0})
     
     return actions
 
