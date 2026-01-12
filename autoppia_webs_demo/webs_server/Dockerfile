@@ -6,10 +6,10 @@ WORKDIR /app
 # Install system dependencies for building Python packages
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        gcc \
-        python3-dev \
-        libpq-dev \
-        build-essential \
+    gcc \
+    python3-dev \
+    libpq-dev \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install Python dependencies
@@ -27,7 +27,8 @@ WORKDIR /app
 # Install runtime dependencies only
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        libpq5 \
+    libpq5 \
+    dos2unix \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
@@ -41,6 +42,7 @@ COPY ./scripts/ .
 
 # Set proper permissions
 RUN mkdir -p /app/data && \
+    dos2unix ./run_api.sh && \
     chmod +x ./run_api.sh && \
     chown -R appuser:appuser /app
 

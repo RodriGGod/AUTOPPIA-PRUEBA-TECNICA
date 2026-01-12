@@ -10,16 +10,19 @@ Before starting, ensure the agent's dependencies are installed **in a local virt
 
 **Installation Commands:**
 ```bash
-# 1. Create a virtual environment (Recommended)
+# 1. Navigate to the agent directory
+cd simple_agent
+
+# 2. Create a virtual environment (Recommended)
 python -m venv venv
 
-# 2. Activate the virtual environment
+# 3. Activate the virtual environment
 # Windows:
 .\venv\Scripts\activate
 # Linux/Mac:
 source venv/bin/activate
 
-# 3. Install Flask (The only dependency for the agent)
+# 4. Install Flask (The only dependency for the agent)
 pip install flask
 ```
 
