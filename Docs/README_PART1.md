@@ -72,13 +72,23 @@ Implemented full telemetry for the new features:
 ## 🚀 Improvements & "Wow" Factors
 To enhance the user experience beyond the basic requirements:
 *   **Dynamic Motion**: The auto-playing carousel adds life to the dashboard.
-*   **Glassmorphism**: Used backdrop-blur effects on rating badges for a modern, premium feel.
-*   **Micro-interactions**: Smooth transitions and hover states make the UI feel responsive.
-*   **Smart UX**: Pausing on hover prevents user frustration during interaction.
-*   **Responsive Polish**: Corrected mobile layout issues, ensuring the carousel and filters adapt perfectly to smaller screens.
-*   **Stylistic Refinements**: Fine-tuned colors, shadows, and spacing to ensure a polished, high-quality look.
+*   **Refined Aesthetics**:
+    *   **Responsive Polish**: Corrected layout issues to ensure perfect rendering on mobile, tablet, and desktop.
+    *   **Margin Consistency**: Adjusted margins (`px-4 md:px-6`) across main containers to ensure consistent spacing when changing screen resolutions.
+    *   **Visual Bug Fixes**: Resolved the "double border" issue on Property Cards to create a cleaner, single-line boundary.
+    *   **Styling**: Fine-tuned colors, shadows, and spacing for a polished, high-quality look.
 
 ## 📝 Verification
-*   **Visual**: Confirmed consistent styling and layout.
-*   **Functional**: generic click handling works, navigation is correct.
-*   **Events**: Confirmed `logEvent` is called with the correct `TRENDING_DESTINATION_CLICKED` type and payload.
+
+### How to Check in the Web (Event Launch)
+To verify that the `TRENDING_DESTINATION_CLICKED` event is being successfully launched:
+
+1.  **Open Developer Tools**: Right-click on the page and select "Inspect" or press `F12`.
+2.  **Go to the Network Tab**: Click on the "Network" tab in the DevTools window.
+3.  **Interact**: Click on any hotel card in the "Trending Destinations" carousel.
+4.  **Verify Request**:
+    *   Look for a new network request named `log-event`.
+    *   Click on it and check the **Payload** (or Request Data).
+    *   Confirm `eventType` is `TRENDING_DESTINATION_CLICKED`.
+    *   Confirm the `data` object contains the correct hotel details (ID, name, price, source, etc.).
+5.  **Console Confirmation**: Alternatively, check the "Console" tab. If configured, successful events may log a confirmation message (or errors if they fail).
