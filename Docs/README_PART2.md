@@ -115,6 +115,17 @@ The Docker container was missing low-level libraries for the browser (`libgbm`, 
 ### Challenge 3: Connectivity
 The Docker container is isolated. The agent is on Windows. We used `AGENT_HOST=host.docker.internal` (Step 4) to build a bridge between them.
 
+### Challenge 4: Windows Line Endings (CRLF vs LF)
+**Problem:** The `webs_server` container failed to start with the error `exec ./run_api.sh: no such file or directory`, even though the file existed.
+
+**Root Cause:** The `run_api.sh` script was created on Windows with CRLF line endings (`\r\n`). When copied to the Linux container, the shebang line became `#!/bin/bash\r` instead of `#!/bin/bash`, making it unrecognizable to the Linux shell.
+
+**Solution:** We modified the `Dockerfile` to:
+1. Install `dos2unix` utility in the container
+2. Convert line endings before setting permissions: `dos2unix ./run_api.sh`
+
+This ensures the script runs correctly regardless of the development OS.
+
 ## 🏗️ Final Architecture
 1.  **Host Machine**: Runs `agent_server.py` (Port 7000) and the `web_8` demo (Port 8000).
 2.  **Docker Container**: Behaves as the "Evaluator".
