@@ -84,10 +84,10 @@ export function PropertyCard({
   return (
     <SeedLink
       href={href ?? `/stay/${id}`}
-      className="group relative block overflow-hidden rounded-xl border border-neutral-200 bg-white transition-all hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+      className="group relative block transition-transform hover:scale-[1.02] active:scale-[0.98]"
       aria-label={`View details for ${title}`}
     >
-      <div className="bg-white w-full rounded-3xl shadow-md border border-neutral-200 flex flex-col overflow-hidden group relative transition hover:-translate-y-0.5 hover:shadow-xl cursor-pointer">
+      <div className="bg-white w-full rounded-xl shadow-md border border-neutral-200 flex flex-col overflow-hidden group relative transition hover:-translate-y-0.5 hover:shadow-xl cursor-pointer">
         <div className="relative aspect-[1.25/1] overflow-hidden">
           <Image
             src={image}
